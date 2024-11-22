@@ -21,7 +21,7 @@ const HeroContainer = styled(Box)({
 
 const HeroContent = styled(Box)({
   zIndex: 2,
-  maxWidth: '700px', // Weniger Breite für das Content-Bereich
+  maxWidth: '700', // Weniger Breite für das Content-Bereich
   textAlign: 'center', // Text zentriert
 });
 
@@ -39,7 +39,7 @@ const HeroTitle = styled(Typography)({
 
 const HeroSubtitle = styled(Typography)({
   fontSize: '1.5rem',  // Kleinere Schriftgröße
-  fontWeight: 400,
+  fontWeight: 600,
   marginTop: '15px',
   animation: 'fadeIn 2s ease-out',
   transition: 'color 0.3s ease',

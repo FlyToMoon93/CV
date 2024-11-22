@@ -1,12 +1,17 @@
-'use client';  // <-- Add this line at the top of your file
+// components/Footer.js
+import React from 'react';
+import { Container, Typography, Grid } from '@mui/material';
 
 const Footer = () => {
-    return (
-      <footer>
-        <p>&copy; 2024 Khalil Ibesh. Alle Rechte vorbehalten.</p>
-      </footer>
-    );
-  };
-  
-  export default Footer;
-  
+  return (
+    <Container component="footer" style={{ padding: '20px 0', backgroundColor: '#333', color: '#fff' }}>
+      <Grid container justifyContent="center">
+        <Typography variant="body1" align="center">
+          © 2024 Kreative Webseite. Alle Rechte vorbehalten.
+        </Typography>
+      </Grid>
+    </Container>
+  );
+};
+
+export default Footer;

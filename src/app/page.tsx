@@ -1,14 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
 import Hero from '../components/Hero';
-import About from '../components/About';
-import Projects from '../components/Projects';
-import Resume from '../components/Resume';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
-import { Box, Container } from '@mui/material'; // Container für den zentralen Wrapper
+import { Box, Container } from '@mui/material'; 
+import Header from '@/components/Header';
+import Content from '@/components/Content';
 
 const Home = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -18,45 +15,53 @@ const Home = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      document.body.style.background = getRandomGradientBackground();
+    }, 5000); // Alle 5 Sekunden wird der Hintergrund geändert
+    return () => clearInterval(interval); // Aufräumen der Intervalle
+  }, []);
+
+  // Funktion zum Erstellen eines kreativen und zufälligen Farbverlaufs
+  const getRandomGradientBackground = () => {
+    const randomColor1 = getRandomHSLColor();
+    const randomColor2 = getRandomHSLColor();
+    const randomColor3 = getRandomHSLColor();
+    
+    // Erstellen eines einzigartigen Farbverlaufs mit Übergängen
+    return `linear-gradient(135deg, ${randomColor1}, ${randomColor2}, ${randomColor3})`;
+  };
+
+  // Hilfsfunktion zur Generierung einer zufälligen HSL-Farbe
+  const getRandomHSLColor = () => {
+    const hue = Math.floor(Math.random() * 360); // Zufälliger Farbton (0-360)
+    const saturation = Math.floor(Math.random() * 60) + 40; // Sättigung (40%-100%)
+    const lightness = Math.floor(Math.random() * 40) + 30; // Helligkeit (30%-70%)
+    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+  };
+
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        transition: 'background 1s ease-in-out',  // Sanfter Übergang für den Hintergrund
+      }}
+    >
       {/* Sidebar Component */}
       <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
 
-      {/* Main Content Container (this will take 100% height of the screen) */}
-      <Box
-        component="main"
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',  // Ensures content is evenly distributed and footer stays at the bottom
-          marginLeft: sidebarOpen ? '250px' : '0px', // Shifts content when sidebar is open
-          transition: 'margin-left 0.3s ease',
-          flexGrow: 1,
-          height: '100vh',  // This ensures the entire page fills the screen
-        }}
-      >
+      {/* Main Content Container */}
+     
         {/* Central Container to wrap all sections */}
         <Container maxWidth="lg" sx={{ paddingY: 4, flexGrow: 1 }}>
           {/* Hero Section */}
+          <Header />
           <Hero />
-
-          {/* About Section */}
-          <About />
-
-          {/* Projects Section */}
-          <Projects />
-
-          {/* Resume Section */}
-          <Resume />
-
-          {/* Contact Section */}
-          <Contact />
+          <Content />
         </Container>
-
-        {/* Footer */}
-        <Footer />
-      </Box>
+      
     </Box>
   );
 };
