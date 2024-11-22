@@ -18,7 +18,7 @@ import {
 import { Menu as MenuIcon } from '@mui/icons-material';
 
 // Custom hook to trigger animation on scroll
-function HideOnScroll(props: any) {
+function HideOnScroll(props: { children: React.ReactElement }) {
   const { children } = props;
   const trigger = useScrollTrigger();
 
