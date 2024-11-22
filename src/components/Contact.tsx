@@ -1,3 +1,5 @@
+'use client';  // <-- Add this line at the top of your file
+
 const Contact = () => {
     return (
       <section id="contact" className="contact">

@@ -1,3 +1,5 @@
+'use client';  // <-- Add this line at the top of your file
+
 const About = () => {
     return (
       <section id="about" className="about">
