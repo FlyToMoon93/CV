@@ -13,10 +13,10 @@ const About = () => {
 
       {/* Einführungstext */}
       <Typography variant="body1" sx={introTextStyle}>
-        Als leidenschaftlicher Frontend-Entwickler gehe ich über den reinen Code hinaus und schaffe digitale Erlebnisse,
+        Als leidenschaftlicher Entwickler gehe ich über den reinen Code hinaus und schaffe digitale Erlebnisse,
         die sowohl funktional als auch ästhetisch ansprechend sind. Mit einem klaren Fokus auf innovative Technologien
         und einem Auge für Design verwandle ich Konzepte in interaktive, benutzerfreundliche Webanwendungen, die
-        sowohl die Anforderungen der Nutzer als auch die Vision meiner Kunden widerspiegeln.
+        sowohl die Anforderungen der Nutzer als auch die Vision der Kunden widerspiegeln.
       </Typography>
 
       <Typography variant="h6" align="center" sx={quoteStyle}>

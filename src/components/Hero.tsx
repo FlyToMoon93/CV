@@ -79,7 +79,7 @@ const Hero = () => {
     <HeroContainer>
       <HeroContent>
         <HeroTitle>Khalil Ibesh</HeroTitle>
-        <HeroSubtitle>Frontend Entwickler & Kreativer Denker</HeroSubtitle>
+        <HeroSubtitle>😁😒🤞</HeroSubtitle>
         <CTAButton onClick={toggleProjects}>
           {showProjects ? 'Projekte ausblenden' : 'Meine Projekte ansehen'}
         </CTAButton>
