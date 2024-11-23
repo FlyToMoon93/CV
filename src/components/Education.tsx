@@ -60,9 +60,12 @@ const Education = () => {
             <Typography variant="body1">
               <strong>Sprache:</strong> Erlernen der deutschen Sprache (B2 und C1)
             </Typography>
+            <Button variant="contained" color="primary" onClick={() => window.open('https://www.aslsprachen.de/', '_blank')} style={buttonStyle}>
+              Mehr zur Schule
+            </Button>
           </CardContent>
         </Card>
-
+      
         <Card style={cardStyle}>
           <CardContent>
             <Typography variant="h5" style={titleStyle}>Kolping Akademie Ingolstadt</Typography>
@@ -70,9 +73,12 @@ const Education = () => {
             <Typography variant="body1">
               <strong>Sprache:</strong> Erlernen der deutschen Sprache (B1)
             </Typography>
+            <Button variant="contained" color="primary" onClick={() => window.open('https://www.die-kolping-akademie.de/', '_blank')} style={buttonStyle}>
+              Mehr zur Schule
+            </Button>
           </CardContent>
         </Card>
-
+ 
         <Card style={cardStyle}>
           <CardContent>
             <Typography variant="h5" style={titleStyle}>Neuanfang in Deutschland</Typography>
@@ -90,6 +96,9 @@ const Education = () => {
             <Typography variant="body1">
               <strong>Studiengang:</strong> Bachelorstudium in Mathematik (ohne Abschluss)
             </Typography>
+            <Button variant="contained" color="primary" onClick={() => window.open('https://www.alepuniv.edu.sy/faculty/college-of-science/department/32/', '_blank')} style={buttonStyle}>
+              Mehr zum Studiengang
+            </Button>
           </CardContent>
         </Card>
 

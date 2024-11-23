@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Card, CardContent } from '@mui/material';
+import { Typography, Card, CardContent, Button } from '@mui/material';
 
 const WorkExperience = () => {
   return (
@@ -25,6 +25,9 @@ const WorkExperience = () => {
                 <li>Page-Setup und Content-Pflege für verschiedene TÜV SÜD Online-Shops mit Hilfe des Online-Shop Backoffices sowie Anpassung des Designs durch HTML und CSS.</li>
               </ul>
             </Typography>
+            <Button variant="contained" color="primary" onClick={() => window.open('https://www.tuvsud.com/de-de/ueber-uns/unsere-gesellschaften/digital-service', '_blank')} style={buttonStyle}>
+              Mehr zum Unternehmen
+            </Button>
           </CardContent>
         </Card>
 
@@ -45,6 +48,9 @@ const WorkExperience = () => {
                 <li>React UI: Benutzeroberfläche.</li>
               </ul>
             </Typography>
+            <Button variant="contained" color="primary" onClick={() => window.open('https://www.techmatrix.de/', '_blank')} style={buttonStyle}>
+              Mehr zum Unternehmen
+            </Button>
           </CardContent>
         </Card>
 
@@ -60,6 +66,9 @@ const WorkExperience = () => {
                 <li>Übertragung des Wettbewerbs in Excel-Dateien</li>
               </ul>
             </Typography>
+            <Button variant="contained" color="primary" onClick={() => window.open('https://www.mediamarktsaturn.com/', '_blank')} style={buttonStyle}>
+              Mehr zum Unternehmen
+            </Button>
           </CardContent>
         </Card>
 
@@ -103,5 +112,12 @@ const contentText = {
   fontSize: '16px',
   color: '#555', // Dunklere Schrift für bessere Lesbarkeit
 };
+const buttonStyle = {
+  marginTop: '15px',
+  backgroundColor: '#1976d2',
+  color: 'white',
+  '&:hover': {
+    backgroundColor: '#1565c0',
+  },}
 
 export default WorkExperience;

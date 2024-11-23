@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
 
@@ -120,6 +120,25 @@ const keyframes = `
 const GlobalStyles = styled('style')({});
 
 const Hero = () => {
+  // Image list
+  const images = [
+    'https://raw.githubusercontent.com/FlyToMoon93/CV/37607656361222599f86172ae25ba235cb94a42a/public/profile.jpg',
+    'https://raw.githubusercontent.com/FlyToMoon93/CV/37607656361222599f86172ae25ba235cb94a42a/public/2.jpg',
+  ];
+  
+  // State to track the current image index
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Effect to change image every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // 5000ms = 5 seconds
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <HeroContainer>
       {/* Inject Keyframes */}
@@ -131,9 +150,10 @@ const Hero = () => {
         <CTAButton href="#projects">Meine Projekte ansehen</CTAButton>
       </HeroContent>
       
-      {/* Profile Image */}
+      {/* Profile Image with dynamic source */}
       <HeroImageWrapper>
-      <HeroImage src="https://raw.githubusercontent.com/FlyToMoon93/CV/37607656361222599f86172ae25ba235cb94a42a/public/profile.jpg" alt="Profilbild" />      </HeroImageWrapper>
+        <HeroImage src={images[currentImageIndex]} alt="Profilbild" />
+      </HeroImageWrapper>
     </HeroContainer>
   );
 };
