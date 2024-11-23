@@ -20,11 +20,14 @@ const useStyles = makeStyles(() => ({
     alignItems: 'center',
   },
   gridContainer: {
-    padding: '30px',
+    paddingLeft: '30px',
     background: 'linear-gradient(135deg, #2c3e50, #4b4b4b)',
     borderRadius: '10px',
     maxWidth: '1100px', 
     width: '100%',
+    display: 'flex',          // Flexbox hinzufügen
+    justifyContent: 'center', // Vertikal zentrieren
+    alignItems: 'center',    // Horizontal zentrieren
   },
   card: {
     display: 'flex',
@@ -32,6 +35,7 @@ const useStyles = makeStyles(() => ({
     maxWidth: 345,
     borderRadius: '15px',
     overflow: 'hidden',
+    marginTop:'20px',
     transition: 'transform 0.3s, box-shadow 0.3s',
     boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.2)', 
     '&:hover': {
@@ -109,8 +113,8 @@ const Content: React.FC<ContentProps> = ({ currentSection }) => {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={4} className={classes.gridContainer}>
-    { currentSection && <Box sx={{ padding: '20px', backgroundColor: '#f4f6f9', borderRadius: '8px',    width: '100%', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', marginTop: '20px' }}>
+      <Grid container  spacing={4} className={classes.gridContainer}>
+    { currentSection && <Box sx={{backgroundColor: '#f4f6f9', width: '100%', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
         {/* Dynamisches Rendern der Sektionen basierend auf currentSection */}
         {currentSection && <FunFacts/>}
 

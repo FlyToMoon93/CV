@@ -59,10 +59,9 @@ const FunFacts = () => {
           height: '120px', // Höhe der Box angepasst, um kleiner zu sein
           width: '100%', // Breite ist auf 100% gesetzt
           maxWidth: '900px', // Maximale Breite der Box
-          backgroundColor: '#f4f6f8',
+          backgroundColor: '#f4f6f9',
           padding: '10px 20px',
           borderRadius: '8px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
           margin: '0 auto', // Zentriert die Box
         }}
       >
