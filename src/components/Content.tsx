@@ -7,6 +7,7 @@ import AboutMe from './About';  // Import der AboutMe-Komponente
 import Education from './Education'; // Import der Education-Komponente
 import WorkExperience from './WorkExperience'; // Import der WorkExperience-Komponente
 import Skills from './Skills';
+import FunFacts from './FunFacts';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -108,11 +109,11 @@ const Content: React.FC<ContentProps> = ({ currentSection }) => {
 
   return (
     <div className={classes.root}>
-    
-
       <Grid container spacing={4} className={classes.gridContainer}>
     { currentSection && <Box sx={{ padding: '20px', backgroundColor: '#f4f6f9', borderRadius: '8px',    width: '100%', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', marginTop: '20px' }}>
         {/* Dynamisches Rendern der Sektionen basierend auf currentSection */}
+        {currentSection && <FunFacts/>}
+
         {currentSection === 'über mich' && <AboutMe />}
         {currentSection === 'skills' && <Skills />}
         {currentSection === 'bildungsweg' && <Education />}

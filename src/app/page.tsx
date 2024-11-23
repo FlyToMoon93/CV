@@ -58,6 +58,7 @@ const Home = () => {
         transition: 'background 1s ease-in-out',  // Sanfter Übergang für den Hintergrund
       }}
     >
+
       {/* Main Content Container */}
       <Container maxWidth="lg" sx={{ paddingY: 4, flexGrow: 1 }}>
         {/* Hero Section */}
@@ -65,8 +66,9 @@ const Home = () => {
 
 {/* Content-Komponente erhält den Zustand und rendert den entsprechenden Inhalt */}
     <Hero />
-    <Content currentSection={activeSection} />    
-    </Container>
+    <Content currentSection={activeSection} />
+   </Container>
+
     </Box>
   );
 };

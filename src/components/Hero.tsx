@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
-
 // Custom Styled Components for Creativity
 const HeroContainer = styled(Box)({
   display: 'flex',
@@ -116,6 +115,7 @@ const Hero = () => {
 
       {/* Projekte anzeigen, wenn der Zustand "showProjects" true ist */}
     </HeroContainer>
+    
   );
 };
 
