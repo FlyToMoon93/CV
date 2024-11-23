@@ -1,4 +1,4 @@
-'use client';  // <-- Add this line at the top of your file
+'use client';
 
 import React from 'react';
 import { Container, Typography, Box, Link, IconButton } from '@mui/material';
@@ -7,16 +7,20 @@ import { Email, Phone, LinkedIn, GitHub } from '@mui/icons-material';
 const Contact = () => {
   return (
     <Container
-      maxWidth="md"
+      maxWidth="lg"
       sx={{
         padding: '50px',
-        backgroundColor: '#fff',  // Heller, neutraler Hintergrund
-        borderRadius: '15px',
-        boxShadow: '0px 15px 30px rgba(0, 0, 0, 0.1)', // Elegante Schatten
+        backgroundColor: '#f9f9f9',  // Heller, neutraler Hintergrund
+        borderRadius: '20px',
+        boxShadow: '0px 15px 40px rgba(0, 0, 0, 0.15)', // Eleganterer Schatten für Tiefe
         marginTop: '40px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
+        transition: 'transform 0.3s',
+        '&:hover': {
+          transform: 'scale(1.02)',
+        },
       }}
     >
       <Typography
@@ -26,9 +30,9 @@ const Contact = () => {
           fontWeight: '700',
           fontFamily: `'Poppins', sans-serif`,
           color: '#333',  // Dunkle Farbe für gute Lesbarkeit
-          marginBottom: '20px',
+          marginBottom: '30px',
           textTransform: 'uppercase',
-          letterSpacing: '1px',
+          letterSpacing: '2px',
         }}
       >
         Kontakt
@@ -36,103 +40,144 @@ const Contact = () => {
 
       <Box
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: 3,
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',  // Zwei Spalten Layout
+          gap: 4, // Abstand zwischen den Boxen
           padding: '20px',
         }}
       >
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, transition: 'transform 0.3s' }}>
+        {/* E-Mail Box */}
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 2,
+            padding: '10px 0',
+            transition: 'transform 0.3s',
+            '&:hover': {
+              transform: 'translateY(-5px)',
+            },
+          }}
+        >
           <IconButton
             href="mailto:itismekhalil93@gmail.com"
             color="primary"
             aria-label="Email"
             sx={{
               '&:hover': {
-                transform: 'scale(1.1)',
-                transition: 'transform 0.3s ease-out',
+                color: '#1976d2',  // Leichte Farbeveränderung bei Hover
               },
             }}
           >
-            <Email sx={{ fontSize: 35, color: '#333' }} />
+            <Email sx={{ fontSize: 40, color: '#1976d2' }} />
           </IconButton>
-          <Typography variant="body1" sx={{ color: '#333', fontWeight: '500' }}>
-            Email: <Link href="mailto:itismekhalil93@gmail.com" sx={{ color: '#333', textDecoration: 'none' }}>itismekhalil93@gmail.com</Link>
+          <Typography variant="body1" sx={{ color: '#333', fontWeight: '600' }}>
+            <Link href="mailto:itismekhalil93@gmail.com" sx={{ color: '#333', textDecoration: 'none' }}>
+              itismekhalil93@gmail.com
+            </Link>
           </Typography>
         </Box>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        {/* Telefon Box */}
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 2,
+            padding: '10px 0',
+            transition: 'transform 0.3s',
+            '&:hover': {
+              transform: 'translateY(-5px)',
+            },
+          }}
+        >
           <IconButton
             href="tel:015217594065"
             color="primary"
             aria-label="Telefon"
             sx={{
               '&:hover': {
-                transform: 'scale(1.1)',
-                transition: 'transform 0.3s ease-out',
+                color: '#1976d2',
               },
             }}
           >
-            <Phone sx={{ fontSize: 35, color: '#333' }} />
+            <Phone sx={{ fontSize: 40, color: '#1976d2' }} />
           </IconButton>
-          <Typography variant="body1" sx={{ color: '#333', fontWeight: '500' }}>
-            Telefon: <Link href="tel:015217594065" sx={{ color: '#333', textDecoration: 'none' }}>015217594065</Link>
+          <Typography variant="body1" sx={{ color: '#333', fontWeight: '600' }}>
+            <Link href="tel:015217594065" sx={{ color: '#333', textDecoration: 'none' }}>
+              015217594065
+            </Link>
           </Typography>
         </Box>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        {/* LinkedIn Box */}
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 2,
+            padding: '10px 0',
+            transition: 'transform 0.3s',
+            '&:hover': {
+              transform: 'translateY(-5px)',
+            },
+          }}
+        >
           <IconButton
             href="https://www.linkedin.com/in/khalil-ibesh-9b4632257/"
             color="primary"
             aria-label="LinkedIn"
             sx={{
               '&:hover': {
-                transform: 'scale(1.1)',
-                transition: 'transform 0.3s ease-out',
+                color: '#1976d2',
               },
             }}
           >
-            <LinkedIn sx={{ fontSize: 35, color: '#333' }} />
+            <LinkedIn sx={{ fontSize: 40, color: '#1976d2' }} />
           </IconButton>
-          <Typography variant="body1" sx={{ color: '#333', fontWeight: '500' }}>
-            LinkedIn: <Link href="https://www.linkedin.com/in/khalil-ibesh-9b4632257/" sx={{ color: '#333', textDecoration: 'none' }}>Khalil Ibesh</Link>
+          <Typography variant="body1" sx={{ color: '#333', fontWeight: '600' }}>
+            <Link href="https://www.linkedin.com/in/khalil-ibesh-9b4632257/" sx={{ color: '#333', textDecoration: 'none' }}>
+              Khalil Ibesh
+            </Link>
           </Typography>
         </Box>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        {/* GitHub Box */}
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 2,
+            padding: '10px 0',
+            transition: 'transform 0.3s',
+            '&:hover': {
+              transform: 'translateY(-5px)',
+            },
+          }}
+        >
           <IconButton
             href="https://github.com/FlyToMoon93/Projects"
             color="primary"
             aria-label="GitHub"
             sx={{
               '&:hover': {
-                transform: 'scale(1.1)',
-                transition: 'transform 0.3s ease-out',
+                color: '#1976d2',
               },
             }}
           >
-            <GitHub sx={{ fontSize: 35, color: '#333' }} />
+            <GitHub sx={{ fontSize: 40, color: '#1976d2' }} />
           </IconButton>
-          <Typography variant="body1" sx={{ color: '#333', fontWeight: '500' }}>
-            GitHub: <Link href="https://github.com/FlyToMoon93/Projects" sx={{ color: '#333', textDecoration: 'none' }}>FlyToMoon93</Link>
+          <Typography variant="body1" sx={{ color: '#333', fontWeight: '600' }}>
+            <Link href="https://github.com/FlyToMoon93/Projects" sx={{ color: '#333', textDecoration: 'none' }}>
+              FlyToMoon93
+            </Link>
           </Typography>
         </Box>
       </Box>
-
-      {/* Optional: Minimalistische, transparente Überlagerung */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(255, 255, 255, 0.7)',  // Leichte Überlagerung
-          zIndex: -1,
-          borderRadius: '15px',
-        }}
-      />
     </Container>
   );
 };

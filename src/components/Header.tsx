@@ -1,37 +1,90 @@
-// components/Header.js
-import React from 'react';
-import { AppBar, Toolbar, Typography } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import React, { useState } from 'react';
+import { AppBar, Toolbar, Typography, IconButton, Box, Button } from '@mui/material';
+import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 
-const useStyles = makeStyles(() => ({
-  root: {
-  },
-  title: {
-    flexGrow: 1,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
-  button: {
-    backgroundColor: '#ff4081',
-    color: '#fff',
-    '&:hover': {
-      backgroundColor: '#e040fb',
-    },
-  },
-}));
+interface HeaderProps {
+  onSectionChange: (section: string) => void;
+}
 
-const Header = () => {
-  const classes = useStyles();
+const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null); // Zustand für den aktiven Abschnitt
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  // Funktion, um den Text des Abschnitts anzuzeigen oder auszublenden
+  const handleSectionClick = (section: string) => {
+    if (activeSection === section) {
+      setActiveSection(null); // Wenn der gleiche Abschnitt erneut angeklickt wird, verstecke den Text
+    } else {
+      setActiveSection(section); // Andernfalls zeige den Text an
+    }
+    onSectionChange(section); // Wechselt den Abschnitt
+  };
 
   return (
-    <AppBar position="static" className={classes.root}>
-      <Toolbar>
-        <Typography variant="h6" className={classes.title}>
-          Lebenslauf
-        </Typography>
-       
-      </Toolbar>
-    </AppBar>
+    <div>
+      <AppBar position="static" sx={{ backgroundColor: '#2c3e50' }}>
+        <Toolbar sx={{ justifyContent: 'space-between', paddingX: 2 }}>
+          {/* Titel des Headers */}
+          <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#fff' }}>
+            Lebenslauf
+          </Typography>
+
+          {/* Sidebar-Button */}
+          <IconButton
+            color="inherit"
+            aria-label="menu"
+            onClick={toggleMenu}
+            sx={{
+              fontSize: '30px',
+              color: '#FFFFFF',
+              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+              borderRadius: '50%',
+              '&:hover': {
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              },
+            }}
+          >
+            {menuOpen ? <CloseIcon /> : <MenuIcon />}
+          </IconButton>
+        </Toolbar>
+
+        {/* Horizontale Menüzeile */}
+        {menuOpen && (
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              backgroundColor: '#34495e',
+              paddingY: 1,
+              transition: 'all 0.3s ease',
+            }}
+          >
+            {/* Navigationslinks */}
+            {['Über Mich', 'Projekte', 'Bildungsweg', 'Berufserfahrungen'].map((text, index) => (
+              <Button
+                key={index}
+                sx={{
+                  color: '#FFFFFF',
+                  fontWeight: 'bold',
+                  textTransform: 'none',
+                  marginX: 2,
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  },
+                }}
+                onClick={() => handleSectionClick(text.toLowerCase())} // Wechselt die Sektion und zeigt den Text
+              >
+                {text}
+              </Button>
+            ))}
+          </Box>
+        )}
+      </AppBar>
+    </div>
   );
 };
 
