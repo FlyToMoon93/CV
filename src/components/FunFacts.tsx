@@ -30,7 +30,6 @@ const FunFacts = () => {
     "Meine Lieblingsfarbe im Code: grün (grüne Terminal-Ausgaben sind immer ein gutes Zeichen).",
     "Ich habe so viele Code-Versuche gestartet, wie ein Labormensch Versuche startet – nur weniger erfolgreich.",
     "Ein Entwickler, der nie einen Fehler gemacht hat, hat nie etwas Neues ausprobiert.",
-    "Ich habe nie genug Zeit für Code, aber immer genug Zeit für Kaffeepausen."
   ];
 
   // State für den aktuellen Index des angezeigten Fun Facts
