@@ -1,70 +1,273 @@
-'use client'; // <-- Diese Zeile bleibt oben im Dateikopf
+'use client';
 
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Typography, Grid, Box } from '@mui/material';
 
 const About = () => {
   return (
-    <section id="about" className="about" style={{ backgroundColor: '#f4f7f6', padding: '50px 20px', borderRadius: '8px' }}>
-      <div className="about-content" style={{ maxWidth: '800px', margin: '0 auto' }}>
-      <Typography variant="h3" component="h2" align="center" style={headerStyle}>
-          Über mich
-        </Typography>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.6', color: '#34495E', textAlign: 'justify', marginBottom: '30px' }}>
-          Als leidenschaftlicher Frontend-Entwickler gehe ich über den reinen Code hinaus und schaffe digitale Erlebnisse,
-          die sowohl funktional als auch ästhetisch ansprechend sind. Mit einem klaren Fokus auf innovative Technologien
-          und einem Auge für Design verwandle ich Konzepte in interaktive, benutzerfreundliche Webanwendungen, die
-          sowohl die Anforderungen der Nutzer als auch die Vision meiner Kunden widerspiegeln.
-        </p>
-        <p style={{ fontSize: '1rem', color: '#7F8C8D', textAlign: 'center' }}>
-          Kreativität, Präzision und eine tiefe Leidenschaft für den digitalen Raum treiben mich an.
-        </p>
-        
-        {/* Zusätzliche Informationen */}
-        <div style={additionalInfoStyle}>
-          <h3 style={infoTitleStyle}>Persönliche Informationen</h3>
+    <section id="about" style={sectionStyle}>
+      {/* Hauptüberschrift */}
+      <Typography variant="h3" component="h2" align="center" sx={headerStyle}>
+        Über mich
+      </Typography>
+
+      {/* Einführungstext */}
+      <Typography variant="body1" sx={introTextStyle}>
+        Als leidenschaftlicher Frontend-Entwickler gehe ich über den reinen Code hinaus und schaffe digitale Erlebnisse,
+        die sowohl funktional als auch ästhetisch ansprechend sind. Mit einem klaren Fokus auf innovative Technologien
+        und einem Auge für Design verwandle ich Konzepte in interaktive, benutzerfreundliche Webanwendungen, die
+        sowohl die Anforderungen der Nutzer als auch die Vision meiner Kunden widerspiegeln.
+      </Typography>
+
+      <Typography variant="h6" align="center" sx={quoteStyle}>
+        Kreativität, Präzision und eine tiefe Leidenschaft für den digitalen Raum treiben mich an.
+      </Typography>
+
+      {/* Persönliche Informationen */}
+      <Grid container spacing={3} sx={gridStyle}>
+        <Grid item xs={12} sm={6} sx={infoSectionStyle}>
+          <Typography variant="h5" sx={infoTitleStyle}>Persönliche Informationen</Typography>
           <ul style={infoListStyle}>
+            <br />
             <li><strong>Geburtsdatum:</strong> 24.10.1993</li>
+            <br />
             <li><strong>Geburtsort:</strong> Afrin, Syrien</li>
+            <br />
             <li><strong>Familienstand:</strong> Ledig</li>
-            <li><strong>Seit 2014 in Deutschland</strong></li>
+            <br />
           </ul>
-        </div>
-      </div>
+        </Grid>
+
+        {/* Sprachkenntnisse als horizontale Balken */}
+        <Grid item xs={12} sm={6} sx={languageSectionStyle}>
+          <Typography variant="h5" sx={infoTitleStyle}>Sprachkenntnisse</Typography>
+          <Grid container spacing={2}>
+            {/* Kurdisch */}
+            <Grid item xs={12}>
+              <Typography variant="body1" sx={languageTitleStyle}>Kurdisch</Typography>
+              <Box
+                sx={{
+                  ...progressBarContainerStyle,
+                  '&:hover .hover-text': {
+                    visibility: 'visible',
+                  },
+                }}
+                className="progress-bar"
+              >
+                <Box sx={{ ...progressBarStyle, width: '100%' }} />
+                <Typography
+                  variant="body2"
+                  className="hover-text"
+                  sx={{
+                    ...hoverTextStyle,
+                    position: 'absolute',
+                    visibility: 'hidden',
+                  }}
+                >
+                  Muttersprache
+                </Typography>
+              </Box>
+            </Grid>
+
+            {/* Arabisch */}
+            <Grid item xs={12}>
+              <Typography variant="body1" sx={languageTitleStyle}>Arabisch</Typography>
+              <Box
+                sx={{
+                  ...progressBarContainerStyle,
+                  '&:hover .hover-text': {
+                    visibility: 'visible',
+                  },
+                }}
+                className="progress-bar"
+              >
+                <Box sx={{ ...progressBarStyle, width: '100%' }} />
+                <Typography
+                  variant="body2"
+                  className="hover-text"
+                  sx={{
+                    ...hoverTextStyle,
+                    position: 'absolute',
+                    visibility: 'hidden',
+                  }}
+                >
+                  Muttersprache
+                </Typography>
+              </Box>
+            </Grid>
+
+            {/* Deutsch */}
+            <Grid item xs={12}>
+              <Typography variant="body1" sx={languageTitleStyle}>Deutsch</Typography>
+              <Box
+                sx={{
+                  ...progressBarContainerStyle,
+                  '&:hover .hover-text': {
+                    visibility: 'visible',
+                  },
+                }}
+                className="progress-bar"
+              >
+                <Box sx={{ ...progressBarStyle, width: '90%' }} />
+                <Typography
+                  variant="body2"
+                  className="hover-text"
+                  sx={{
+                    ...hoverTextStyle,
+                    position: 'absolute',
+                    visibility: 'hidden',
+                  }}
+                >
+                  Fließend
+                </Typography>
+              </Box>
+            </Grid>
+
+            {/* Englisch */}
+            <Grid item xs={12}>
+              <Typography variant="body1" sx={languageTitleStyle}>Englisch</Typography>
+              <Box
+                sx={{
+                  ...progressBarContainerStyle,
+                  '&:hover .hover-text': {
+                    visibility: 'visible',
+                  },
+                }}
+                className="progress-bar"
+              >
+                <Box sx={{ ...progressBarStyle, width: '85%' }} />
+                <Typography
+                  variant="body2"
+                  className="hover-text"
+                  sx={{
+                    ...hoverTextStyle,
+                    position: 'absolute',
+                    visibility: 'hidden',
+                  }}
+                >
+                  Fließend
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     </section>
   );
 };
-
-const additionalInfoStyle = {
-  background: 'linear-gradient(145deg, #ffffff, #f1f1f1)', // Farbverlauf für den Hintergrund
-  padding: '30px',
-  borderRadius: '12px', // Rundere Ecken
-  boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)', // Subtiler Schatten für modernen Look
-  marginTop: '30px',
-  border: '1px solid #ddd', // Dünner Rand für visuelle Trennung
-};
-
-const infoTitleStyle = {
-  fontSize: '1.8rem', // Größere Schrift für den Titel
-  color: '#2C3E50',
-  marginBottom: '15px',
-  fontWeight: '600', // Etwas stärkeres Gewicht für den Titel
-};
-
-const infoListStyle = {
-  listStyleType: 'none',
-  paddingLeft: '0',
-  fontSize: '1.1rem', // Etwas größere Schrift für die Liste
-  color: '#34495E',
-  marginBottom: '20px',
-};
-
 
 const headerStyle = {
   fontWeight: 'bold',
   color: '#333',
   marginBottom: '40px',
-  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)', // Schatten für den Text
+  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
+};
+
+// Stil für den Einführungstext
+const introTextStyle = {
+  fontSize: '1.15rem',
+  lineHeight: '1.8',
+  color: '#34495E',
+  textAlign: 'justify',
+  marginBottom: '30px',
+  maxWidth: '900px',
+  margin: '0 auto',
+};
+
+// Stil für das Zitat
+const quoteStyle = {
+  fontSize: '1.2rem',
+  color: '#7F8C8D',
+  fontStyle: 'italic',
+  marginBottom: '40px',
+};
+
+// Stil für das Grid-Layout der Cards
+const gridStyle = {
+  marginTop: '40px',
+  justifyContent: 'space-between',
+};
+
+// Stil für den Bereich der persönlichen Informationen
+const infoSectionStyle = {
+  padding: '20px',
+  borderRadius: '12px',
+  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Sanfter Schatten
+  color: '#34495E', // Dunkelgrauer Text
+};
+
+// Stil für die Sprachkenntnisse
+const languageSectionStyle = {
+  padding: '20px',
+  borderRadius: '12px',
+  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Sanfter Schatten
+  color: '#34495E', // Dunkelgrauer Text
+};
+
+// Stil für den Titel der persönlichen Informationen und Sprachkenntnisse
+const infoTitleStyle = {
+  fontWeight: 'bold',
+  color: '#1976d2',
+  marginBottom: '40px',
+  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
+};
+
+// Stil für die Liste der persönlichen Informationen
+const infoListStyle = {
+  listStyleType: 'none',
+  paddingLeft: '0',
+  fontSize: '1.1rem',
+  marginBottom: '20px',
+};
+
+// Stil für die Sprachbezeichnung
+const languageTitleStyle = {
+  fontWeight: 'bold',
+  color: '#1976d2',
+  marginBottom: '20px',
+  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
+};
+
+// Stil für den Fortschrittsbalken
+const progressBarContainerStyle = {
+  width: '100%',
+  height: '20px',
+  backgroundColor: '#E5E5E5', // Heller Hintergrund für den Fortschrittsbalken
+  borderRadius: '10px',
+  overflow: 'hidden',
+  marginBottom: '15px',
+  position: 'relative', // wichtig für die Positionierung des Hover-Texts
+};
+
+// Stil für den Fortschrittsbalken
+const progressBarStyle = {
+  height: '100%',
+  backgroundColor: '#C0392B', // Rote Farbe für den Fortschritt
+  borderRadius: '10px',
+};
+
+// Stil für Hover-Text (beim Überfahren der Balken)
+const hoverTextStyle = {
+  position: 'absolute',
+  top: '-5px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  fontSize: '1rem',
+  fontWeight: 'bold',
+  color: '#1976d2',
+  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  padding: '5px 10px',
+  borderRadius: '5px',
+  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+  visibility: 'hidden', // Standardmäßig unsichtbar
+};
+
+// Stil für die gesamte Section
+const sectionStyle = {
+  backgroundColor: '#f4f7f6', // Hellgrauer Hintergrund für die gesamte Seite
+  padding: '60px 20px',
+  borderRadius: '12px',
+  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
 };
 
 export default About;

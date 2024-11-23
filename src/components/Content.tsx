@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { Grid, Card, CardContent, Typography, Button, Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Contact from './Contact';
-import Footer from './Footer';
 import React from 'react';
 import AboutMe from './About';  // Import der AboutMe-Komponente
 import Education from './Education'; // Import der Education-Komponente
@@ -11,7 +10,7 @@ import Skills from './Skills';
 
 const useStyles = makeStyles(() => ({
   root: {
-    background: 'linear-gradient(135deg, #6a11cb, #2575fc)', 
+    background: 'linear-gradient(135deg, #2c3e50, #4b4b4b)',
     minHeight: '100vh',
     padding: 0,
     margin: 0,
@@ -20,10 +19,9 @@ const useStyles = makeStyles(() => ({
     alignItems: 'center',
   },
   gridContainer: {
-    padding: '20px',
-    background: 'rgba(255, 255, 255, 0.9)', 
+    padding: '30px',
+    background: 'linear-gradient(135deg, #2c3e50, #4b4b4b)',
     borderRadius: '10px',
-    boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
     maxWidth: '1100px', 
     width: '100%',
   },
@@ -141,7 +139,6 @@ const Content: React.FC<ContentProps> = ({ currentSection }) => {
           </Grid>
         ))}
         <Contact />
-        <Footer />
       </Grid>
     </div>
   );
