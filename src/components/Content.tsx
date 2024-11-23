@@ -5,9 +5,9 @@ import Contact from './Contact';
 import Footer from './Footer';
 import React from 'react';
 import AboutMe from './About';  // Import der AboutMe-Komponente
-import Projects from './Projects'; // Import der Projects-Komponente
 import Education from './Education'; // Import der Education-Komponente
 import WorkExperience from './WorkExperience'; // Import der WorkExperience-Komponente
+import Skills from './Skills';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -116,7 +116,7 @@ const Content: React.FC<ContentProps> = ({ currentSection }) => {
     { currentSection && <Box sx={{ padding: '20px', backgroundColor: '#f4f6f9', borderRadius: '8px',    width: '100%', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', marginTop: '20px' }}>
         {/* Dynamisches Rendern der Sektionen basierend auf currentSection */}
         {currentSection === 'über mich' && <AboutMe />}
-        {currentSection === 'projekte' && <Projects />}
+        {currentSection === 'skills' && <Skills />}
         {currentSection === 'bildungsweg' && <Education />}
         {currentSection === 'berufserfahrungen' && <WorkExperience />}
       </Box>}

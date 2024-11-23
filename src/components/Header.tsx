@@ -7,7 +7,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(true);
   const [activeSection, setActiveSection] = useState<string | null>(null); // Zustand für den aktiven Abschnitt
 
   const toggleMenu = () => {
@@ -64,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
             }}
           >
             {/* Navigationslinks */}
-            {['Über Mich', 'Projekte', 'Bildungsweg', 'Berufserfahrungen'].map((text, index) => (
+            {['Über Mich', 'Skills', 'Bildungsweg', 'Berufserfahrungen'].map((text, index) => (
               <Button
                 key={index}
                 sx={{

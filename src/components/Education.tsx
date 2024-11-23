@@ -1,23 +1,158 @@
-// components/Education.js
 import React from 'react';
+import { Typography, Card, CardContent, Button } from '@mui/material';
 
 const Education = () => {
   return (
-    <div>
-      <h2>Bildungsweg</h2>
-      <div style={{ marginBottom: '20px' }}>
-        <h3>Universität XYZ</h3>
-        <p><strong>Studiengang:</strong> Informatik</p>
-        <p><strong>Abschluss:</strong> Bachelor of Science</p>
-        <p><strong>Jahre:</strong> 2018 - 2022</p>
+    <section id="education" style={sectionStyle}>
+      <div style={contentStyle}>
+        <Typography variant="h3" component="h2" align="center" style={headerStyle}>
+          BILDUNGSWEG
+        </Typography>
+
+        {/* Masterstudium */}
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>Technische Hochschule Ingolstadt</Typography>
+            <Typography variant="subtitle1" color="textSecondary">03/2024 - aktuell</Typography>
+            <Typography variant="body1" style={contentText}>
+              <strong>Studiengang:</strong> Masterstudium in Cloud Applications und Security Engineering
+            </Typography>
+            <Typography variant="body1">
+              <strong>Voraussichtlicher Abschluss:</strong> 15.08.2025
+            </Typography>
+            <Button variant="contained" color="primary" onClick={() => window.open('https://www.thi.de/informatik/studiengaenge/cloud-applications-und-security-engineering-msc/', '_blank')} style={buttonStyle}>
+              Mehr zum Studiengang
+            </Button>
+          </CardContent>
+        </Card>
+
+        {/* Bachelorstudium */}
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>Bachelorstudium: Flug- und Fahrzeuginformatik</Typography>
+            <Typography variant="subtitle1" color="textSecondary">10/2019 - 03/2024</Typography>
+            <Typography variant="body1" style={contentText}>
+              <strong>Bachelorarbeitsnote:</strong> 1,3
+              <br />
+              <strong>Prüfungsgesamtnote:</strong> 3,1
+            </Typography>
+            <Button variant="contained" color="primary" onClick={() => window.open('https://www.thi.de/informatik/studiengaenge/flug-und-fahrzeuginformatik-bsc/', '_blank')} style={buttonStyle}>
+              Mehr zum Studiengang
+            </Button>
+          </CardContent>
+        </Card>
+
+        {/* Weitere Bildungsstationen */}
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>Technische Hochschule Ingolstadt</Typography>
+            <Typography variant="subtitle1" color="textSecondary">03/2017 - 10/2017</Typography>
+            <Typography variant="body1">
+              <strong>Kurs:</strong> Integrationskurs zur persönlichen und beruflichen Weiterentwicklung (Deutsch und Englisch)
+            </Typography>
+          </CardContent>
+        </Card>
+
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>International Sprachschule, München</Typography>
+            <Typography variant="subtitle1" color="textSecondary">02/2016 - 09/2016</Typography>
+            <Typography variant="body1">
+              <strong>Sprache:</strong> Erlernen der deutschen Sprache (B2 und C1)
+            </Typography>
+          </CardContent>
+        </Card>
+
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>Kolping Akademie Ingolstadt</Typography>
+            <Typography variant="subtitle1" color="textSecondary">01/2015 - 12/2015</Typography>
+            <Typography variant="body1">
+              <strong>Sprache:</strong> Erlernen der deutschen Sprache (B1)
+            </Typography>
+          </CardContent>
+        </Card>
+
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>Neuanfang in Deutschland</Typography>
+            <Typography variant="subtitle1" color="textSecondary">10/2014</Typography>
+            <Typography variant="body1">
+              Beginn eines neuen Lebensabschnitts in Deutschland
+            </Typography>
+          </CardContent>
+        </Card>
+
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>Universität Aleppo, Syrien</Typography>
+            <Typography variant="subtitle1" color="textSecondary">10/2011 - 07/2012</Typography>
+            <Typography variant="body1">
+              <strong>Studiengang:</strong> Bachelorstudium in Mathematik (ohne Abschluss)
+            </Typography>
+          </CardContent>
+        </Card>
+
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>Gymnasium Aleppo, Syrien</Typography>
+            <Typography variant="subtitle1" color="textSecondary">10/2008 - 07/2011</Typography>
+            <Typography variant="body1">
+              <strong>Abschluss:</strong> Abitur, Schwerpunkt: Mathematik und Physik
+            </Typography>
+            <Typography variant="body1">
+              <strong>Abiturnote:</strong> 1,9
+            </Typography>
+          </CardContent>
+        </Card>
       </div>
-      <div style={{ marginBottom: '20px' }}>
-        <h3>Gymnasium ABC</h3>
-        <p><strong>Abschluss:</strong> Abitur</p>
-        <p><strong>Jahre:</strong> 2010 - 2018</p>
-      </div>
-    </div>
+    </section>
   );
+};
+
+// Styles
+const sectionStyle = {
+  padding: '50px',
+  backgroundColor: '#e3e3e3', // Heller, neutraler Hintergrund für bessere Lesbarkeit
+};
+
+const contentStyle = {
+  maxWidth: '1200px',
+  margin: '0 auto',
+};
+
+const headerStyle = {
+  fontWeight: 'bold',
+  color: '#333', // Dunklere Schriftfarbe für besseren Kontrast
+  marginBottom: '40px',
+};
+
+const cardStyle = {
+  marginBottom: '30px',
+  borderRadius: '12px',
+  boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)', // Subtile Schatten für einen modernen Look
+  backgroundColor: '#ffffff', // Heller Hintergrund für die Karten
+  padding: '20px',
+};
+
+const titleStyle = {
+  fontWeight: 'bold',
+  color: '#1976d2', // Klare, kräftige Farbe für die Titel
+};
+
+const contentText = {
+  marginBottom: '20px',
+  fontSize: '16px',
+  color: '#555', // Dunklere Schrift für bessere Lesbarkeit
+};
+
+const buttonStyle = {
+  marginTop: '15px',
+  backgroundColor: '#1976d2',
+  color: 'white',
+  '&:hover': {
+    backgroundColor: '#1565c0',
+  },
 };
 
 export default Education;
