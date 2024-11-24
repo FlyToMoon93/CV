@@ -2,11 +2,12 @@
 
 import React from 'react';
 import { Typography, Box, Chip, Tooltip } from '@mui/material';
-import { SiReact, SiNextdotjs, SiCypress, SiJira, SiAzuredevops, SiBitbucket, SiJson } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiCypress, SiJira, SiAzuredevops, SiBitbucket, SiJson, SiDocker, SiKubernetes, SiJenkins, SiTrello, SiConfluence, SiSlack, SiUbuntu, SiGitlab } from 'react-icons/si';
 import { DiScrum } from 'react-icons/di';
 import { MdWeb } from 'react-icons/md';
-import { SiKalilinux } from 'react-icons/si'; // Fügen wir Kali Linux hinzu
-import { FaNpm, FaBug } from 'react-icons/fa'; // Fügen wir Nmap und Burp Suite Icons hinzu
+import { SiKalilinux } from 'react-icons/si';
+import { FaNpm, FaBug, FaDocker, FaTerminal } from 'react-icons/fa'; 
+import { VscBeaker } from 'react-icons/vsc';
 
 const Skills = () => {
   return (
@@ -37,50 +38,83 @@ const Skills = () => {
             <Tooltip title="NextJS Framework">
               <Chip label="NextJS" icon={<SiNextdotjs />} sx={chipStyle} />
             </Tooltip>
-          </Box>
-        </div>
-
-        {/* Webtechnologien & Tools */}
-        <div style={skillBoxStyle}>
-          <Typography variant="h5" component="h3" style={categoryTitleStyle}>
-            Webtechnologien & Tools
-          </Typography>
-          <Box sx={chipContainerStyle}>
-            <Tooltip title="Webdesign Tools">
-              <Chip label="Webdesign" icon={<MdWeb />} sx={chipStyle} />
+            <Tooltip title="TypeScript - JavaScript mit statischer Typisierung">
+              <Chip label="TypeScript" sx={chipStyle} />
             </Tooltip>
-            <Tooltip title="Webentwicklung Tools">
-              <Chip label="Webentwicklung" sx={chipStyle} />
-            </Tooltip>
-            <Tooltip title="HTML - Strukturierung von Webseiten">
-              <Chip label="HTML" sx={chipStyle} />
-            </Tooltip>
-            <Tooltip title="CSS - Gestaltung von Webseiten">
-              <Chip label="CSS" sx={chipStyle} />
-            </Tooltip>
-            <Tooltip title="React UI - Benutzeroberflächen">
-              <Chip label="React UI" sx={chipStyle} />
-            </Tooltip>
-            <Tooltip title="JSON - Datenformat">
-              <Chip label="JSON" icon={<SiJson />} sx={chipStyle} />
+            <Tooltip title="Node.js - JavaScript Laufzeitumgebung">
+              <Chip label="Node.js" sx={chipStyle} />
             </Tooltip>
           </Box>
         </div>
 
-        {/* Cypress & Testing */}
+       {/* Webtechnologien & Tools */}
+<div style={skillBoxStyle}>
+  <Typography variant="h5" component="h3" style={categoryTitleStyle}>
+    Webtechnologien & Tools
+  </Typography>
+  <Box sx={chipContainerStyle}>
+    <Tooltip title="Webdesign Tools">
+      <Chip label="Webdesign" icon={<MdWeb />} sx={chipStyle} />
+    </Tooltip>
+    <Tooltip title="Webentwicklung Tools">
+      <Chip label="Webentwicklung" sx={chipStyle} />
+    </Tooltip>
+    <Tooltip title="HTML - Strukturierung von Webseiten">
+      <Chip label="HTML" sx={chipStyle} />
+    </Tooltip>
+    <Tooltip title="CSS - Gestaltung von Webseiten">
+      <Chip label="CSS" sx={chipStyle} />
+    </Tooltip>
+    <Tooltip title="React UI - Benutzeroberflächen">
+      <Chip label="React UI" sx={chipStyle} />
+    </Tooltip>
+    <Tooltip title="JSON - Datenformat">
+      <Chip label="JSON" icon={<SiJson />} sx={chipStyle} />
+    </Tooltip>
+    <Tooltip title="Bootstrap - Framework für responsive Design">
+      <Chip label="Bootstrap" sx={chipStyle} />
+    </Tooltip>
+    <Tooltip title="Material-UI - React-Komponenten-Bibliothek">
+      <Chip label="Material-UI" sx={chipStyle} />
+    </Tooltip>
+    <Tooltip title="Postman - API-Test-Tool">
+      <Chip label="Postman" sx={chipStyle} />
+    </Tooltip>
+  </Box>
+</div>
+
+        {/* Testing & Automatisierung */}
         <div style={skillBoxStyle}>
           <Typography variant="h5" component="h3" style={categoryTitleStyle}>
             Testing & Automatisierung
           </Typography>
           <Box sx={chipContainerStyle}>
-            <Tooltip title="Cypress - End-to-End Testing">
-              <Chip label="Cypress" icon={<SiCypress />} sx={chipStyle} />
+            <Tooltip title="Unit Testing - Modultests">
+              <Chip label="Unit Testing" icon={<VscBeaker />} sx={chipStyle} />
             </Tooltip>
-            <Tooltip title="Jira - Projektmanagement">
-              <Chip label="Jira" icon={<SiJira />} sx={chipStyle} />
+            <Tooltip title="Integration Testing - Integrationstests">
+              <Chip label="Integration Testing" icon={<VscBeaker />} sx={chipStyle} />
             </Tooltip>
-            <Tooltip title="Azure DevOps - DevOps Platform">
-              <Chip label="Azure DevOps" icon={<SiAzuredevops />} sx={chipStyle} />
+            <Tooltip title="System Testing - Systemtests">
+              <Chip label="System Testing" icon={<VscBeaker />} sx={chipStyle} />
+            </Tooltip>
+            <Tooltip title="Acceptance Testing - Abnahmetests">
+              <Chip label="Acceptance Testing" icon={<VscBeaker />} sx={chipStyle} />
+            </Tooltip>
+            <Tooltip title="Regression Testing - Regressionstests">
+              <Chip label="Regression Testing" icon={<VscBeaker />} sx={chipStyle} />
+            </Tooltip>
+            <Tooltip title="Manual Testing - Manuelle Tests">
+              <Chip label="Manual Testing" icon={<FaBug />} sx={chipStyle} />
+            </Tooltip>
+            <Tooltip title="Automated Testing - Automatisierte Tests">
+              <Chip label="Automated Testing" icon={<SiCypress />} sx={chipStyle} />
+            </Tooltip>
+            <Tooltip title="Functional Testing - Funktionale Tests">
+              <Chip label="Functional Testing" icon={<VscBeaker />} sx={chipStyle} />
+            </Tooltip>
+            <Tooltip title="Non-functional Testing - Nicht-funktionale Tests">
+              <Chip label="Non-functional Testing" icon={<VscBeaker />} sx={chipStyle} />
             </Tooltip>
           </Box>
         </div>
@@ -100,6 +134,13 @@ const Skills = () => {
             <Tooltip title="Bitbucket - Git Repository Management">
               <Chip label="Bitbucket" icon={<SiBitbucket />} sx={chipStyle} />
             </Tooltip>
+            <Tooltip title="Docker - Containerisierung">
+              <Chip label="Docker" icon={<FaDocker />} sx={chipStyle} />
+            </Tooltip>
+            <Tooltip title="Confluence - Dokumentationstool">
+              <Chip label="Confluence" icon={<SiConfluence />} sx={chipStyle} />
+            </Tooltip>
+           
           </Box>
         </div>
 
@@ -112,18 +153,26 @@ const Skills = () => {
             <Tooltip title="Kali Linux - Penetration Testing Distribution">
               <Chip label="Kali Linux" icon={<SiKalilinux />} sx={chipStyle} />
             </Tooltip>
+            <Tooltip title="Ubuntu - Eine der beliebtesten Linux-Distributionen">
+              <Chip label="Ubuntu" icon={<SiUbuntu />} sx={chipStyle} />
+            </Tooltip>
             <Tooltip title="Nmap - Netzwerkerkennungs-Tool">
               <Chip label="Nmap" icon={<FaNpm />} sx={chipStyle} />
             </Tooltip>
             <Tooltip title="Burp Suite - Sicherheits-Testing-Tool">
               <Chip label="Burp Suite" icon={<FaBug />} sx={chipStyle} />
             </Tooltip>
+            <Tooltip title="GitLab - Alternative Git-Plattform">
+              <Chip label="GitLab" icon={<SiGitlab />} sx={chipStyle} />
+            </Tooltip>
+           
           </Box>
         </div>
       </div>
     </section>
   );
 };
+
 
 // Styles
 const sectionStyle = {
