@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Hero from '../components/Hero';
-import { Box, Container } from '@mui/material'; 
+import { CardContent, Container } from '@mui/material'; 
 import Header from '@/components/Header';
 import Content from '@/components/Content';
 import MyInfo from '@/components/MyInfo';
@@ -56,12 +56,11 @@ const Home = () => {
   };
 
   return (
-    <Box
+    <CardContent
       sx={{
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
-        transition: 'background 1s ease-in-out', // Sanfter Übergang für den Hintergrund
       }}
     >
       {/* Main Content Container */}
@@ -77,7 +76,7 @@ const Home = () => {
         {showProjects && <Content />}
       </Container>
 
-    </Box>
+    </CardContent>
   );
 };
 

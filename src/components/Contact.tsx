@@ -1,7 +1,7 @@
 'use client'; // <-- Diese Zeile bleibt oben im Dateikopf
 
 import React from 'react';
-import { Typography, Box, Chip, Tooltip } from '@mui/material';
+import { Typography, Card, CardContent, Chip, Tooltip } from '@mui/material';
 import { Email, Phone, LinkedIn, GitHub } from '@mui/icons-material';
 
 const Contact = () => {
@@ -11,13 +11,14 @@ const Contact = () => {
         <Typography variant="h3" component="h2" align="center" style={headerStyle}>
           Kontakt
         </Typography>
-        
-        {/* Kontaktmethoden */}
-        <div style={contactBoxStyle}>
-          <Typography variant="h5" component="h3" style={categoryTitleStyle}>
-            Kontaktmöglichkeiten
-          </Typography>
-          <Box sx={chipContainerStyle}>
+
+        {/* E-Mail Box */}
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>E-Mail</Typography>
+            <Typography variant="body1" style={contentText}>
+              <strong>Email-Adresse:</strong> itismekhalil93@gmail.com
+            </Typography>
             <Tooltip title="E-Mail Kontakt">
               <a href="mailto:itismekhalil93@gmail.com" style={chipLinkStyle}>
                 <Chip 
@@ -27,6 +28,16 @@ const Contact = () => {
                 />
               </a>
             </Tooltip>
+          </CardContent>
+        </Card>
+
+        {/* Telefon Box */}
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>Telefon</Typography>
+            <Typography variant="body1" style={contentText}>
+              <strong>Telefonnummer:</strong> +49 152 17594065
+            </Typography>
             <Tooltip title="Telefon Kontakt">
               <a href="tel:+4915217594065" style={chipLinkStyle}>
                 <Chip 
@@ -36,6 +47,16 @@ const Contact = () => {
                 />
               </a>
             </Tooltip>
+          </CardContent>
+        </Card>
+
+        {/* LinkedIn Box */}
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>LinkedIn</Typography>
+            <Typography variant="body1" style={contentText}>
+              <strong>Profil:</strong> LinkedIn Profil 
+            </Typography>
             <Tooltip title="LinkedIn Profil">
               <a href="https://www.linkedin.com/in/khalil-ibesh-9b4632257/" target="_blank" rel="noopener noreferrer" style={chipLinkStyle}>
                 <Chip 
@@ -45,26 +66,28 @@ const Contact = () => {
                 />
               </a>
             </Tooltip>
-          </Box>
-        </div>
+          </CardContent>
+        </Card>
 
-        {/* Weitere Kontaktinformationen */}
-        <div style={contactBoxStyle}>
-          <Typography variant="h5" component="h3" style={categoryTitleStyle}>
-            In Github 
-          </Typography>
-          <Box sx={chipContainerStyle}>
+        {/* GitHub Box */}
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>GitHub</Typography>
+            <Typography variant="body1" style={contentText}>
+              <strong>Profil:</strong> GitHub-Projekte
+            </Typography>
             <Tooltip title="GitHub Profil">
               <a href="https://github.com/FlyToMoon93/Projects" target="_blank" rel="noopener noreferrer" style={chipLinkStyle}>
                 <Chip 
-                  label="FlyToMoon93" 
+                  label="GitHub" 
                   icon={<GitHub sx={iconStyle} />} 
                   sx={chipStyle} 
                 />
               </a>
             </Tooltip>
-          </Box>
-        </div>
+          </CardContent>
+        </Card>
+
       </div>
     </section>
   );
@@ -80,30 +103,28 @@ const contentStyle = {
   maxWidth: '1200px',
   margin: '0 auto',
 };
-
 const headerStyle = {
   fontWeight: 'bold',
   color: '#333', // Dunklere Schriftfarbe für besseren Kontrast
   marginBottom: '40px',
 };
 
-const contactBoxStyle = {
+const cardStyle = {
   marginBottom: '30px',
-  backgroundColor: '#ffffff',
-  padding: '20px',
   borderRadius: '12px',
-  boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
-  transition: 'transform 0.3s ease-in-out',
-  '&:hover': {
-    transform: 'scale(1.05)',
-    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
-  },
+  boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)', // Subtile Schatten für einen modernen Look
+  backgroundColor: '#ffffff', // Heller Hintergrund für die Karten
+  padding: '20px',
+};
+const titleStyle = {
+  fontWeight: 'bold',
+  color: '#1976d2', // Klare, kräftige Farbe für die Titel
 };
 
-const categoryTitleStyle = {
-  fontWeight: 'bold',
-  color: '#1976d2',
-  marginBottom: '15px',
+const contentText = {
+  marginBottom: '20px',
+  fontSize: '16px',
+  color: '#555', // Dunklere Schrift für bessere Lesbarkeit
 };
 
 const chipContainerStyle = {
@@ -118,8 +139,8 @@ const chipStyle = {
   fontWeight: 'bold',
   transition: 'transform 0.2s ease-in-out',
   display: 'flex', 
-  alignItems: 'center',  // Align text and icon properly
-  padding: '8px 12px', // Add padding for better spacing
+  alignItems: 'center', 
+  padding: '8px 12px',
   '&:hover': {
     transform: 'scale(1.1)',
     backgroundColor: '#1565c0',
@@ -127,12 +148,12 @@ const chipStyle = {
 };
 
 const chipLinkStyle = {
-  textDecoration: 'none', // Remove default underline from links
+  textDecoration: 'none',
 };
 
 const iconStyle = {
-  fontSize: '20px', // Increase the icon size
-  marginRight: '8px', // Add margin to separate icon from label
+  fontSize: '20px',
+  marginRight: '8px',
 };
 
 export default Contact;
