@@ -7,7 +7,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false); // Initialwert auf false setzen
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   const toggleMenu = () => {
@@ -23,7 +23,6 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
     }
     onSectionChange(section);
   };
-
 
   return (
     <div>
@@ -77,12 +76,16 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
           <Box
             sx={{
               display: 'flex',
+              flexDirection: 'column', // Vertikale Ausrichtung für kleine Bildschirme
               justifyContent: 'center',
               backgroundColor: 'rgba(52, 152, 219, 0.8)', // Subtile, abgerundete Farbgebung
               paddingY: 1,
               transition: 'all 0.3s ease',
               borderRadius: '10px',
               animation: 'fadeIn 0.5s ease-out', // Animation beim Öffnen des Menüs
+              '@media (min-width:600px)': {
+                flexDirection: 'row', // Horizontale Ausrichtung für größere Bildschirme
+              },
             }}
           >
             {/* Navigationslinks */}
@@ -113,8 +116,6 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
                 {text}
               </Button>
             ))}
-
-           
           </Box>
         )}
       </AppBar>
