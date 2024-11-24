@@ -17,9 +17,9 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
   // Funktion, um den Text des Abschnitts anzuzeigen oder auszublenden
   const handleSectionClick = (section: string) => {
     if (activeSection === section) {
-      setActiveSection(null); // Wenn der gleiche Abschnitt erneut angeklickt wird, verstecke den Text
+      setActiveSection(null); // Wenn der gleiche Abschnitt erneut angeklickt wird, entferne die Farbe
     } else {
-      setActiveSection(section); // Andernfalls zeige den Text an
+      setActiveSection(section); // Andernfalls setze diesen Abschnitt als aktiv
     }
     onSectionChange(section); // Wechselt den Abschnitt
   };
@@ -27,13 +27,12 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
   return (
     <div>
       <AppBar position="static" sx={{ backgroundColor: '#2c3e50' }}>
-        <Toolbar sx={{ justifyContent: 'space-between', paddingX: 2 }}>
-          {/* Titel des Headers */}
-          <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#fff' }}>
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', paddingX: 2 }}>
+          {/* Left side: Lebenslauf */}
+          <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#fff'}}>
             Lebenslauf
           </Typography>
-
-          {/* Sidebar-Button */}
+          {/* Right side: Sidebar-Button */}
           <IconButton
             color="inherit"
             aria-label="menu"
@@ -64,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
             }}
           >
             {/* Navigationslinks */}
-            {['Über Mich', 'Skills', 'Bildungsweg', 'Berufserfahrungen'].map((text, index) => (
+            {['Über Mich', 'Skills', 'Bildungsweg', 'Berufserfahrungen', 'Kontakt'].map((text, index) => (
               <Button
                 key={index}
                 sx={{
@@ -72,6 +71,7 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
                   fontWeight: 'bold',
                   textTransform: 'none',
                   marginX: 2,
+                  backgroundColor: activeSection === text.toLowerCase() ? '#2980b9' : 'transparent', // Aktive Sektion hat eine andere Farbe
                   '&:hover': {
                     backgroundColor: 'rgba(255, 255, 255, 0.2)',
                   },

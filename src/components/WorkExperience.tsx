@@ -80,7 +80,7 @@ const WorkExperience = () => {
 // Styles
 const sectionStyle = {
   padding: '50px',
-  backgroundColor: '#e3e3e3', // Heller, neutraler Hintergrund für bessere Lesbarkeit
+  background: 'linear-gradient(135deg, #f4f7f6 0%, #e0e8f0 100%)',
 };
 
 const contentStyle = {

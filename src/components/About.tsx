@@ -5,10 +5,10 @@ import { Typography, Grid, Box } from '@mui/material';
 
 const About = () => {
   return (
-    <section id="about" style={sectionStyle}>
+    <section id='about' style={sectionStyle}>
       {/* Hauptüberschrift */}
       <Typography variant="h3" component="h2" align="center" sx={headerStyle}>
-        Über mich
+        Über Mich
       </Typography>
 
       {/* Einführungstext */}
@@ -264,7 +264,7 @@ const hoverTextStyle = {
 
 // Stil für die gesamte Section
 const sectionStyle = {
-  backgroundColor: '#f4f7f6', // Hellgrauer Hintergrund für die gesamte Seite
+  background: 'linear-gradient(135deg, #f4f7f6 0%, #e0e8f0 100%)',
   padding: '60px 20px',
   borderRadius: '12px',
   boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',

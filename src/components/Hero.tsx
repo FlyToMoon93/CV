@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
+
 // Custom Styled Components for Creativity
 const HeroContainer = styled(Box)({
   display: 'flex',
@@ -65,40 +66,50 @@ const CTAButton = styled(Button)({
   },
 });
 
+// Interface für ShowProjects
+interface ShowProjects {
+  showprojekt: boolean | null;
+  toggleProjects: () => void;
+}
 
-// Hauptkomponente Hero
-const Hero = () => {
-  const [showProjects, setShowProjects] = useState(false);
+// Hero-Komponente
+const Hero = ({ showprojekt, toggleProjects }: ShowProjects) => {
+  const [activeSection, setActiveSection] = useState<string | null>(null); // Zustand für den aktiven Abschnitt
 
-  // Funktion zum Umschalten der Anzeige der Projekte
-  const toggleProjects = () => {
-    setShowProjects(!showProjects);
+   // Funktion, um den Text des Abschnitts anzuzeigen oder auszublenden
+   const handleSectionClick = (section: string) => {
+    if (activeSection === section) {
+      setActiveSection(null); // Wenn der gleiche Abschnitt erneut angeklickt wird, verstecke den Text
+    } else {
+      setActiveSection(section); // Andernfalls zeige den Text an
+    }
   };
-
   return (
     <HeroContainer>
       <HeroContent>
         <HeroTitle>Khalil Ibesh</HeroTitle>
         <HeroSubtitle>😁😒🤞</HeroSubtitle>
         <CTAButton onClick={toggleProjects}>
-          {showProjects ? 'Projekte ausblenden' : 'Meine Projekte ansehen'}
+          {showprojekt ? 'Projekte ausblenden' : 'Projekte ansehen'}
         </CTAButton>
       </HeroContent>
 
-      {/* Profile Image */}
-      <Box sx={{
-        position: 'absolute',
-        top: '10px',   
-        left: '10px',
-        zIndex: 1,
-        overflow: 'hidden',
-        borderRadius: '50%',
-        boxShadow: '0px 15px 30px rgba(0, 0, 0, 0.5)',
-        transition: 'transform 0.3s ease-out',
-        '&:hover': {
-          transform: 'scale(1.1) rotate(5deg)',
-        },
-      }}>
+      {/* Profilbild */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '10px',
+          left: '10px',
+          zIndex: 1,
+          overflow: 'hidden',
+          borderRadius: '50%',
+          boxShadow: '0px 15px 30px rgba(0, 0, 0, 0.5)',
+          transition: 'transform 0.3s ease-out',
+          '&:hover': {
+            transform: 'scale(1.1) rotate(5deg)',
+          },
+        }}
+      >
         <img
           src="https://raw.githubusercontent.com/FlyToMoon93/CV/37607656361222599f86172ae25ba235cb94a42a/public/profile.jpg"
           alt="Profilbild"
@@ -112,10 +123,7 @@ const Hero = () => {
           }}
         />
       </Box>
-
-      {/* Projekte anzeigen, wenn der Zustand "showProjects" true ist */}
     </HeroContainer>
-    
   );
 };
 

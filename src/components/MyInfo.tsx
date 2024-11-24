@@ -1,7 +1,11 @@
-import Link from 'next/link';
-import { Grid, Card, CardContent, Typography, Button } from '@mui/material';
+import { Grid,Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React from 'react';
+import AboutMe from './About';  // Import der AboutMe-Komponente
+import Education from './Education'; // Import der Education-Komponente
+import WorkExperience from './WorkExperience'; // Import der WorkExperience-Komponente
+import Skills from './Skills';
+import Contact from './Contact';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -88,46 +92,30 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-// Daten für die Boxen
-const cardData = [
-  { title: ' Inhalt 1', description: 'Hier können Sie einige interessante Informationen über das Thema einfügen.', background: 'linear-gradient(135deg, #ff7e5f, #feb47b)', link: '/content1' },
-  { title: ' Inhalt 2', description: 'Ein weiterer spannender Bereich, den Sie entdecken können.', background: 'linear-gradient(135deg, #6a11cb, #2575fc)', link: '/content2' },
-  { title: ' Inhalt 3', description: 'Weitere Informationen zu einem anderen Thema.', background: 'linear-gradient(135deg, #f79c42, #f0c27b)', link: '/content3' },
-  { title: ' Inhalt 4', description: 'Erfahren Sie mehr über diesen interessanten Aspekt.', background: 'linear-gradient(135deg, #00c6ff, #0072ff)', link: '/content4' },
-  { title: ' Inhalt 5', description: 'Entdecken Sie weitere spannende Details.', background: 'linear-gradient(135deg, #ff5f6d, #ffc3a0)', link: '/content5' },
-  { title: ' Inhalt 6', description: 'Hier finden Sie zusätzliche Informationen.', background: 'linear-gradient(135deg, #3a7bd5, #3a3dff)', link: '/content6' },
-];
 
+interface ContentProps {
+  currentSection: string | null;
+}
 
-const Content = () => {
+const MyInfo: React.FC<ContentProps> = ({ currentSection }) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div  className={classes.root}>
       <Grid container  spacing={4} className={classes.gridContainer}>
-        {  cardData.map((card, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card className={classes.card}>
-              <div className={classes.colorBox} style={{ background: card.background }}></div>
-              <CardContent className={classes.cardContent}>
-                <Typography variant="h5" className={classes.title}>
-                  {card.title}
-                </Typography>
-                <Typography variant="body2" className={classes.description}>
-                  {card.description}
-                </Typography>
-                <Link href={card.link} passHref>
-                  <Button size="small" className={classes.button}>
-                    Mehr erfahren
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
+    { currentSection && <Box sx={{backgroundColor: '#f4f6f9', width: '100%', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+        {/* Dynamisches Rendern der Sektionen basierend auf currentSection */}
+
+        {currentSection === 'über mich' && <AboutMe />}
+        {currentSection === 'skills' && <Skills />}
+        {currentSection === 'bildungsweg' && <Education />}
+        {currentSection === 'berufserfahrungen' && <WorkExperience />}
+        {currentSection === 'kontakt' && <Contact/>}
+      </Box>}
+       
       </Grid>
     </div>
   );
 };
 
-export default Content;
+export default MyInfo;

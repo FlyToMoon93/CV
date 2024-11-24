@@ -1,109 +1,139 @@
-'use client';
+'use client'; // <-- Diese Zeile bleibt oben im Dateikopf
 
 import React from 'react';
-import { Container, Typography, Box, IconButton, Tooltip } from '@mui/material';
+import { Typography, Box, Chip, Tooltip } from '@mui/material';
 import { Email, Phone, LinkedIn, GitHub } from '@mui/icons-material';
 
 const Contact = () => {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        padding: '40px 20px',
-        backgroundColor: '#f9f9f9',
-        borderRadius: '20px',
-        boxShadow: '0px 15px 40px rgba(0, 0, 0, 0.1)',
-        marginTop: '30px',
-        textAlign: 'center',
-        position: 'relative',
-        overflow: 'hidden',
-        transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
-        '&:hover': {
-          transform: 'scale(1.05)',
-          boxShadow: '0px 15px 50px rgba(0, 0, 0, 0.15)',
-        },
-      }}
-    >
-      <Typography
-        variant="h5"
-        gutterBottom
-        sx={{
-          fontWeight: '700',
-          fontFamily: `'Poppins', sans-serif`,
-          color: '#333',
-          marginBottom: '20px',
-          textTransform: 'uppercase',
-          letterSpacing: '2px',
-        }}
-      >
-        Kontakt
-      </Typography>
-
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 2,
-          padding: '10px 0',
-        }}
-      >
-        {[ 
-          { label: 'E-Mail', href: 'mailto:itismekhalil93@gmail.com', icon: <Email />, text: 'itismekhalil93@gmail.com' },
-          { label: 'Telefon', href: 'tel:015217594065', icon: <Phone />, text: '015217594065' },
-          { label: 'LinkedIn', href: 'https://www.linkedin.com/in/khalil-ibesh-9b4632257/', icon: <LinkedIn />, text: 'Khalil Ibesh' },
-          { label: 'GitHub', href: 'https://github.com/FlyToMoon93/Projects', icon: <GitHub />, text: 'FlyToMoon93' },
-        ].map(({ label, href, icon, text }) => (
-          <Box
-            key={label}
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 2,
-              padding: '12px 16px',
-              borderRadius: '10px',
-              backgroundColor: '#fff',
-              transition: 'transform 0.3s, background-color 0.3s, box-shadow 0.3s',
-              textDecoration: 'none',
-              '&:hover': {
-                transform: 'translateY(-5px)',
-                backgroundColor: '#e0e0e0', // Sanfte, gut lesbare Hover-Farbe
-                boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
-              },
-              cursor: 'pointer', // Sicherstellen, dass die Box klickbar ist
-            }}
-            component="a" // Die gesamte Box klickbar machen
-            href={href} // Der Link wird auch für die gesamte Box gelten
-          >
-            <Tooltip title={label} placement="top">
-              <IconButton
-                color="primary"
-                aria-label={label}
-                sx={{
-                  '&:hover': {
-                    color: '#1976d2', // Standardfarbe des Icons
-                    transform: 'scale(1.1)',
-                  },
-                }}
-              >
-                {icon}
-              </IconButton>
+    <section id="kontakt" style={sectionStyle}>
+      <div style={contentStyle}>
+        <Typography variant="h3" component="h2" align="center" style={headerStyle}>
+          Kontakt
+        </Typography>
+        
+        {/* Kontaktmethoden */}
+        <div style={contactBoxStyle}>
+          <Typography variant="h5" component="h3" style={categoryTitleStyle}>
+            Kontaktmöglichkeiten
+          </Typography>
+          <Box sx={chipContainerStyle}>
+            <Tooltip title="E-Mail Kontakt">
+              <a href="mailto:itismekhalil93@gmail.com" style={chipLinkStyle}>
+                <Chip 
+                  label="E-Mail" 
+                  icon={<Email sx={iconStyle} />} 
+                  sx={chipStyle} 
+                />
+              </a>
             </Tooltip>
-            <Typography
-              variant="body2"
-              sx={{
-                color: '#333',
-                fontWeight: '500',
-                textDecoration: 'none', // Keine Unterstreichung
-              }}
-            >
-              {text}
-            </Typography>
+            <Tooltip title="Telefon Kontakt">
+              <a href="tel:+4915217594065" style={chipLinkStyle}>
+                <Chip 
+                  label="Telefon" 
+                  icon={<Phone sx={iconStyle} />} 
+                  sx={chipStyle} 
+                />
+              </a>
+            </Tooltip>
+            <Tooltip title="LinkedIn Profil">
+              <a href="https://www.linkedin.com/in/khalil-ibesh-9b4632257/" target="_blank" rel="noopener noreferrer" style={chipLinkStyle}>
+                <Chip 
+                  label="LinkedIn" 
+                  icon={<LinkedIn sx={iconStyle} />} 
+                  sx={chipStyle} 
+                />
+              </a>
+            </Tooltip>
           </Box>
-        ))}
-      </Box>
-    </Container>
+        </div>
+
+        {/* Weitere Kontaktinformationen */}
+        <div style={contactBoxStyle}>
+          <Typography variant="h5" component="h3" style={categoryTitleStyle}>
+            In Github 
+          </Typography>
+          <Box sx={chipContainerStyle}>
+            <Tooltip title="GitHub Profil">
+              <a href="https://github.com/FlyToMoon93/Projects" target="_blank" rel="noopener noreferrer" style={chipLinkStyle}>
+                <Chip 
+                  label="FlyToMoon93" 
+                  icon={<GitHub sx={iconStyle} />} 
+                  sx={chipStyle} 
+                />
+              </a>
+            </Tooltip>
+          </Box>
+        </div>
+      </div>
+    </section>
   );
+};
+
+// Styles
+const sectionStyle = {
+  padding: '50px',
+  background: 'linear-gradient(135deg, #f4f7f6 0%, #e0e8f0 100%)',
+};
+
+const contentStyle = {
+  maxWidth: '1200px',
+  margin: '0 auto',
+};
+
+const headerStyle = {
+  fontWeight: 'bold',
+  color: '#333',
+  marginBottom: '40px',
+  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
+};
+
+const contactBoxStyle = {
+  marginBottom: '30px',
+  backgroundColor: '#ffffff',
+  padding: '20px',
+  borderRadius: '12px',
+  boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
+  transition: 'transform 0.3s ease-in-out',
+  '&:hover': {
+    transform: 'scale(1.05)',
+    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
+  },
+};
+
+const categoryTitleStyle = {
+  fontWeight: 'bold',
+  color: '#1976d2',
+  marginBottom: '15px',
+};
+
+const chipContainerStyle = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '15px',
+};
+
+const chipStyle = {
+  backgroundColor: '#1976d2',
+  color: '#fff',
+  fontWeight: 'bold',
+  transition: 'transform 0.2s ease-in-out',
+  display: 'flex', 
+  alignItems: 'center',  // Align text and icon properly
+  padding: '8px 12px', // Add padding for better spacing
+  '&:hover': {
+    transform: 'scale(1.1)',
+    backgroundColor: '#1565c0',
+  },
+};
+
+const chipLinkStyle = {
+  textDecoration: 'none', // Remove default underline from links
+};
+
+const iconStyle = {
+  fontSize: '20px', // Increase the icon size
+  marginRight: '8px', // Add margin to separate icon from label
 };
 
 export default Contact;
