@@ -1,45 +1,17 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Hero from '../components/Hero';
 import { CardContent, Container } from '@mui/material'; 
 import Header from '@/components/Header';
 import Content from '@/components/Content';
 import MyInfo from '@/components/MyInfo';
 
-
-
+// Home-Komponente
 const Home = () => {
   // Zustand für das Anzeigen der Projekte
   const [showProjects, setShowProjects] = useState<boolean | null>(null);
   const [activeSection, setActiveSection] = useState<string | null>(null); // Zustand für den aktiven Abschnitt
-
-  // Hintergrund beim Laden setzen
-  useEffect(() => {
-    document.body.style.background = getRandomGradientBackground();
-
-    const interval = setInterval(() => {
-      document.body.style.background = getRandomGradientBackground();
-    }, 10000); // Alle 10 Sekunden wird der Hintergrund geändert
-
-    return () => clearInterval(interval); // Aufräumen des Intervalls
-  },[]);
-
-  // Funktion zum Erstellen eines kreativen und zufälligen dunklen Farbverlaufs
-  const getRandomGradientBackground = () => {
-    const randomColor1 = getRandomDarkHSLColor();
-    const randomColor2 = getRandomDarkHSLColor();
-    const randomColor3 = getRandomDarkHSLColor();
-    return `linear-gradient(135deg, ${randomColor1}, ${randomColor2}, ${randomColor3})`;
-  };
-
-  // Hilfsfunktion zur Generierung einer zufälligen dunklen HSL-Farbe
-  const getRandomDarkHSLColor = () => {
-    const hue = Math.floor(Math.random() * 360);
-    const saturation = Math.floor(Math.random() * 30) + 20;
-    const lightness = Math.floor(Math.random() * 20) + 10;
-    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-  };
 
   // Funktion zum Umschalten der Anzeige der Projekte
   const toggleProjects = () => {
@@ -61,6 +33,7 @@ const Home = () => {
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
+        background: 'black', // Hintergrund auf Schwarz setzen
       }}
     >
       {/* Main Content Container */}
@@ -70,12 +43,11 @@ const Home = () => {
 
         {/* Übergabe des Zustands und der Funktion an die Hero-Komponente */}
         <Hero showprojekt={showProjects} toggleProjects={toggleProjects} /> 
-      {  activeSection &&  <MyInfo currentSection={activeSection} /> }
+        {activeSection && <MyInfo currentSection={activeSection} />}
 
         {/* Zeige den Content nur, wenn showProjects true ist */}
         {showProjects && <Content />}
       </Container>
-
     </CardContent>
   );
 };

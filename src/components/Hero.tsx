@@ -1,16 +1,13 @@
-'use client';
-
 import React, { useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
 
-// Custom Styled Components for Creativity
 const HeroContainer = styled(Box)({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   height: '40vh',
-  background: 'linear-gradient(135deg, #2b2b2b 0%, #4f4f4f 50%, #1c1c1c 100%)',
+  background: 'linear-gradient(135deg, #2b2b2b 0%, #4f4f4f 50%, #1c1c1c 20%)',
   color: '#ffffff',
   textAlign: 'center',
   position: 'relative',
@@ -26,6 +23,9 @@ const HeroContent = styled(Box)({
 });
 
 const HeroTitle = styled(Typography)({
+  position: 'absolute',
+  bottom: '20px',  // Positioniert den Titel nach unten
+  left: '20px',    // Positioniert den Titel nach links
   fontSize: '2.8rem',
   fontWeight: 800,
   textShadow: '3px 3px 10px rgba(0, 0, 0, 0.7)',
@@ -74,27 +74,26 @@ interface ShowProjects {
 
 // Hero-Komponente
 const Hero = ({ showprojekt, toggleProjects }: ShowProjects) => {
-  const [activeSection, setActiveSection] = useState<string | null>(null); // Zustand für den aktiven Abschnitt
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
-   // Funktion, um den Text des Abschnitts anzuzeigen oder auszublenden
-   const handleSectionClick = (section: string) => {
+  const handleSectionClick = (section: string) => {
     if (activeSection === section) {
-      setActiveSection(null); // Wenn der gleiche Abschnitt erneut angeklickt wird, verstecke den Text
+      setActiveSection(null);
     } else {
-      setActiveSection(section); // Andernfalls zeige den Text an
+      setActiveSection(section);
     }
   };
+
   return (
     <HeroContainer>
       <HeroContent>
-        <HeroTitle>Khalil Ibesh</HeroTitle>
-        <HeroSubtitle>😁😒🤞</HeroSubtitle>
+        <HeroTitle>Khalil Ibesh</HeroTitle> {/* Name unten links */}
+        <HeroSubtitle>😁🤞😒</HeroSubtitle>
         <CTAButton onClick={toggleProjects}>
           {showprojekt ? 'Projekte ausblenden' : 'Projekte ansehen'}
         </CTAButton>
       </HeroContent>
 
-      {/* Profilbild */}
       <Box
         sx={{
           position: 'absolute',
