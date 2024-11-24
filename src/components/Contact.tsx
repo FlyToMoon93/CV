@@ -83,9 +83,8 @@ const contentStyle = {
 
 const headerStyle = {
   fontWeight: 'bold',
-  color: '#333',
+  color: '#333', // Dunklere Schriftfarbe für besseren Kontrast
   marginBottom: '40px',
-  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
 };
 
 const contactBoxStyle = {
