@@ -6,7 +6,7 @@ const HeroContainer = styled(Box)({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  height: '40vh',
+  height: '50vh',
   background: 'linear-gradient(135deg, #2b2b2b 0%, #4f4f4f 50%, #1c1c1c 20%)',
   color: '#ffffff',
   textAlign: 'center',
@@ -24,7 +24,7 @@ const HeroContent = styled(Box)({
 
 const HeroTitle = styled(Typography)({
   position: 'absolute',
-  bottom: '20px',  // Positioniert den Titel nach unten
+  bottom: '0px',  // Positioniert den Titel nach unten
   left: '20px',    // Positioniert den Titel nach links
   fontSize: '2.8rem',
   fontWeight: 800,
