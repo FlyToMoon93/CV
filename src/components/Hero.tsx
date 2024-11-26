@@ -1,128 +1,58 @@
-import React, { useState } from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import React from 'react';
+import { Box } from '@mui/material';
 import { styled } from '@mui/system';
 
-const HeroContainer = styled(Box)({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '50vh',
-  background: 'linear-gradient(135deg, #2b2b2b 0%, #4f4f4f 50%, #1c1c1c 20%)',
-  color: '#ffffff',
-  textAlign: 'center',
-  position: 'relative',
-  overflow: 'hidden',
-  padding: '0 20px',
-  animation: 'gradientShift 20s ease infinite alternate',
-});
-
-const HeroContent = styled(Box)({
-  zIndex: 2,
-  maxWidth: '700px',
-  textAlign: 'center',
-});
-
-const HeroTitle = styled(Typography)({
+// Styled Component für das Bild als Kreis, zentriert auf der Seite
+const CircleImage = styled(Box)(({ theme }) => ({
+  width: '250px',              // Breite des Bildes als Kreis
+  height: '250px',             // Höhe des Bildes als Kreis
+  borderRadius: '50%',         // Macht das Bild rund
+  backgroundSize: 'cover',     // Bild wird innerhalb des Kreises skaliert
+  backgroundPosition: 'center', // Bild bleibt zentriert im Kreis
+  backgroundImage: 'url(https://raw.githubusercontent.com/FlyToMoon93/CV/37607656361222599f86172ae25ba235cb94a42a/public/profile.jpg)', // Bildquelle
+  boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)', // Schatten für das Bild
   position: 'absolute',
-  bottom: '0px',  // Positioniert den Titel nach unten
-  left: '20px',    // Positioniert den Titel nach links
-  fontSize: '2.8rem',
-  fontWeight: 800,
-  textShadow: '3px 3px 10px rgba(0, 0, 0, 0.7)',
-  animation: 'fadeInDown 1.5s ease-out',
-  lineHeight: 1.2,
-  transition: 'color 0.3s ease',
-  '&:hover': {
-    color: '#d3d3d3',
+  top: '50%',                  // Vertikale Zentrierung der Seite
+  left: '50%',                 // Horizontale Zentrierung der Seite
+  transform: 'translate(-50%, -50%)', // Kompensation der Größe, um es exakt zu zentrieren
+  // Gradient overlay für besseren Kontrast
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
-});
-
-const HeroSubtitle = styled(Typography)({
-  fontSize: '1.5rem',
-  fontWeight: 600,
-  marginTop: '15px',
-  animation: 'fadeIn 2s ease-out',
-  transition: 'color 0.3s ease',
-  '&:hover': {
-    color: '#a9a9a9',
+  '& h1': {
+    position: 'absolute',
+    bottom: '20px',
+    left: '20px',
+    fontSize: '2.5rem',
+    fontWeight: 'bold',
+    animation: 'fadeIn 1s ease-out', // Animation für den Text
   },
-});
-
-const CTAButton = styled(Button)({
-  marginTop: '20px',
-  padding: '12px 25px',
-  fontSize: '1rem',
-  color: '#ffffff',
-  backgroundColor: '#555555',
-  borderRadius: '30px',
-  textTransform: 'none',
-  fontWeight: 'bold',
-  transition: 'background-color 0.3s, transform 0.3s',
-  boxShadow: '0px 10px 20px rgba(85, 85, 85, 0.5)',
-  '&:hover': {
-    backgroundColor: '#666666',
-    transform: 'scale(1.1)',
-    boxShadow: '0px 15px 30px rgba(100, 100, 100, 0.7)',
+  [theme.breakpoints.down('sm')]: {
+    height: '40vh',
+    width: '80vw', // Anpassung auf kleinen Bildschirmen
   },
-});
+  // Subtiler Parallax-Effekt und Hintergrundgrößenänderung bei Hover
+  '&:hover': {
+    backgroundSize: '110%', // Bild wird bei Hover etwas vergrößert
+    transition: 'background-size 0.5s ease-out', // Sanfte Übergänge
+  },
+  '@keyframes fadeIn': {
+    '0%': { opacity: 0 },
+    '100%': { opacity: 1 },
+  },
+}));
 
-// Interface für ShowProjects
-interface ShowProjects {
-  showprojekt: boolean | null;
-  toggleProjects: () => void;
-}
-
-// Hero-Komponente
-const Hero = ({ showprojekt, toggleProjects }: ShowProjects) => {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
-
-  const handleSectionClick = (section: string) => {
-    if (activeSection === section) {
-      setActiveSection(null);
-    } else {
-      setActiveSection(section);
-    }
-  };
-
+const Hero = () => {
   return (
-    <HeroContainer>
-      <HeroContent>
-        <HeroTitle>Khalil Ibesh</HeroTitle> {/* Name unten links */}
-        <HeroSubtitle>😁🤞😒</HeroSubtitle>
-        <CTAButton onClick={toggleProjects}>
-          {showprojekt ? 'Projekte ausblenden' : 'Projekte ansehen'}
-        </CTAButton>
-      </HeroContent>
-
-      <Box
-        sx={{
-          position: 'absolute',
-          top: '10px',
-          left: '10px',
-          zIndex: 1,
-          overflow: 'hidden',
-          borderRadius: '50%',
-          boxShadow: '0px 15px 30px rgba(0, 0, 0, 0.5)',
-          transition: 'transform 0.3s ease-out',
-          '&:hover': {
-            transform: 'scale(1.1) rotate(5deg)',
-          },
-        }}
-      >
-        <img
-          src="https://raw.githubusercontent.com/FlyToMoon93/CV/37607656361222599f86172ae25ba235cb94a42a/public/profile.jpg"
-          alt="Profilbild"
-          style={{
-            width: '250px',
-            height: '250px',
-            borderRadius: '50%',
-            objectFit: 'cover',
-            border: '5px solid #ffffff',
-            boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)',
-          }}
-        />
-      </Box>
-    </HeroContainer>
+    <Box sx={{ position: 'relative', height: '50vh', width: '100%' }}>
+      {/* Das Bild als Kreis, zentriert auf der Seite */}
+      <CircleImage />
+    </Box>
   );
 };
 

@@ -2,10 +2,12 @@
 
 import React from 'react';
 import { Typography, Grid, Box } from '@mui/material';
+import Hero from './Hero';
 
 const About = () => {
   return (
     <section id='about' style={sectionStyle}>
+      <Hero/>
       {/* Hauptüberschrift */}
       <Typography variant="h3" component="h2" align="center" sx={headerStyle}>
         Über Mich

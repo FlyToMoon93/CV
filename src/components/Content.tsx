@@ -5,46 +5,56 @@ import React from 'react';
 
 const useStyles = makeStyles(() => ({
   root: {
-    background: '#fff',
+    background: 'linear-gradient(135deg, #f4f7f6 0%, #e0e8f0 100%)',
     minHeight: '100vh',
-    padding: 0,
-    margin: 0,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: '60px 20px',
+    borderRadius: '12px',
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+  },
+  container: {
+    width: '100%',
+    maxWidth: '1500px', // Optional: Erhöhen, um mehr Platz für große Bildschirme zu bieten
+    textAlign: 'center',
+  },
+  headerStyle: {
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: '40px',
+    fontSize: '1.5rem', // Größere Schrift auf größeren Bildschirmen
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
   },
   gridContainer: {
-    paddingLeft: '30px',
-    background: '#fff',
-    borderRadius: '10px',
-    maxWidth: '1100px', 
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    gap: '30px',
     width: '100%',
-    display: 'flex',          // Flexbox hinzufügen
-    justifyContent: 'center', // Vertikal zentrieren
-    alignItems: 'center',    // Horizontal zentrieren
   },
   card: {
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'space-between', // Ensure content is spaced evenly
+    height: '100%', // Ensures that all cards are the same height
     maxWidth: 345,
     borderRadius: '15px',
-    overflow: 'hidden',
-    marginTop:'20px',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
     transition: 'transform 0.3s, box-shadow 0.3s',
-    boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.2)', 
     '&:hover': {
       transform: 'scale(1.05)',
-      boxShadow: '0px 25px 50px rgba(0, 0, 0, 0.3)', 
+      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
     },
-    height: '100%',
   },
   colorBox: {
     height: 220,
-    background: 'linear-gradient(135deg, #ff7e5f, #feb47b)', 
+    borderRadius: '15px 15px 0 0',
+    background: 'linear-gradient(135deg, #ff7e5f, #feb47b)',
     transition: 'opacity 0.3s, transform 0.3s',
     '&:hover': {
       opacity: 0.85,
-      transform: 'scale(1.05)', 
+      transform: 'scale(1.05)',
     },
   },
   cardContent: {
@@ -53,24 +63,16 @@ const useStyles = makeStyles(() => ({
     color: '#fff',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
-    height: '100%',
+    justifyContent: 'space-between', // Distribute content evenly
     textAlign: 'center',
-  },
-  title: {
-    fontFamily: `'Roboto Slab', serif`,
-    fontWeight: 700,
-    fontSize: '1.6rem',
-    color: '#fff',
-    letterSpacing: '1px', 
-    marginBottom: '10px',
+    flexGrow: 1, // Ensures the content takes available space
   },
   description: {
     fontFamily: `'Open Sans', sans-serif`,
     color: '#e0e0e0',
-    lineHeight: 1.8,
     fontSize: '1rem',
-    flexGrow: 1,
+    lineHeight: 1.8,
+    flexGrow: 1, // Allow description to grow and take available space
   },
   button: {
     marginTop: '20px',
@@ -80,7 +82,7 @@ const useStyles = makeStyles(() => ({
     color: '#ffffff',
     '&:hover': {
       backgroundColor: '#6a11cb',
-      transform: 'scale(1.05)', 
+      transform: 'scale(1.05)',
       textDecoration: 'underline',
     },
     borderRadius: '50px',
@@ -90,42 +92,49 @@ const useStyles = makeStyles(() => ({
 
 // Daten für die Boxen
 const cardData = [
-  { title: ' Inhalt 1', description: 'Hier können Sie einige interessante Informationen über das Thema einfügen.', background: 'linear-gradient(135deg, #ff7e5f, #feb47b)', link: '/content1' },
-  { title: ' Inhalt 2', description: 'Ein weiterer spannender Bereich, den Sie entdecken können.', background: 'linear-gradient(135deg, #6a11cb, #2575fc)', link: '/content2' },
-  { title: ' Inhalt 3', description: 'Weitere Informationen zu einem anderen Thema.', background: 'linear-gradient(135deg, #f79c42, #f0c27b)', link: '/content3' },
-  { title: ' Inhalt 4', description: 'Erfahren Sie mehr über diesen interessanten Aspekt.', background: 'linear-gradient(135deg, #00c6ff, #0072ff)', link: '/content4' },
-  { title: ' Inhalt 5', description: 'Entdecken Sie weitere spannende Details.', background: 'linear-gradient(135deg, #ff5f6d, #ffc3a0)', link: '/content5' },
-  { title: ' Inhalt 6', description: 'Hier finden Sie zusätzliche Informationen.', background: 'linear-gradient(135deg, #3a7bd5, #3a3dff)', link: '/content6' },
+  { title: 'Inhalt 1', description: 'Hier können Sie einige interessante Informationen über das Thema einfügen.', background: 'linear-gradient(135deg, #ff7e5f, #feb47b)', link: '/content1' },
+  { title: 'Inhalt 2', description: 'Ein weiterer spannender Bereich, den Sie entdecken können.', background: 'linear-gradient(135deg, #6a11cb, #2575fc)', link: '/content2' },
+  { title: 'Inhalt 3', description: 'Weitere Informationen zu einem anderen Thema.', background: 'linear-gradient(135deg, #f79c42, #f0c27b)', link: '/content3' },
+  { title: 'Inhalt 4', description: 'Erfahren Sie mehr über diesen interessanten Aspekt.', background: 'linear-gradient(135deg, #00c6ff, #0072ff)', link: '/content4' },
+  { title: 'Inhalt 5', description: 'Entdecken Sie weitere spannende Details.', background: 'linear-gradient(135deg, #ff5f6d, #ffc3a0)', link: '/content5' },
+  { title: 'Inhalt 6', description: 'Hier finden Sie zusätzliche Informationen.', background: 'linear-gradient(135deg, #3a7bd5, #3a3dff)', link: '/content6' },
 ];
-
 
 const Content = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Grid container  spacing={4} className={classes.gridContainer}>
-        {  cardData.map((card, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card className={classes.card}>
-              <div className={classes.colorBox} style={{ background: card.background }}></div>
-              <CardContent className={classes.cardContent}>
-                <Typography variant="h5" className={classes.title}>
-                  {card.title}
-                </Typography>
-                <Typography variant="body2" className={classes.description}>
-                  {card.description}
-                </Typography>
-                <Link href={card.link} passHref>
-                  <Button size="small" className={classes.button}>
-                    Mehr erfahren
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+    <div className={classes.root} id="Projekte ansehen">
+      <div className={classes.container}>
+        {/* Titel */}
+        <Typography variant="h3" component="h2" align="center" className={classes.headerStyle}>
+          Meine Projekte
+        </Typography>
+
+        {/* Grid Container für die Boxen */}
+        <Grid container spacing={4} className={classes.gridContainer}>
+          {cardData.map((card, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}> {/* Diese Größe sorgt dafür, dass die Boxen gleichmäßig verteilt sind */}
+              <Card className={classes.card}>
+                <div className={classes.colorBox} style={{ background: card.background }}></div>
+                <CardContent className={classes.cardContent}>
+                  <Typography variant="h5" className={classes.headerStyle}>
+                    {card.title}
+                  </Typography>
+                  <Typography variant="body2" className={classes.description}>
+                    {card.description}
+                  </Typography>
+                  <Link href={card.link} passHref>
+                    <Button size="small" className={classes.button}>
+                      Mehr erfahren
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </div>
     </div>
   );
 };

@@ -107,6 +107,8 @@ const headerStyle = {
   fontWeight: 'bold',
   color: '#333', // Dunklere Schriftfarbe für besseren Kontrast
   marginBottom: '40px',
+  fontSize: '1.5rem', // Größere Schrift auf größeren Bildschirmen
+
 };
 
 const cardStyle = {
@@ -118,6 +120,7 @@ const cardStyle = {
 };
 const titleStyle = {
   fontWeight: 'bold',
+  fontSize: '1.0rem',
   color: '#1976d2', // Klare, kräftige Farbe für die Titel
 };
 

@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, IconButton, Box, Button } from '@mui/material';
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
+import { styled } from '@mui/system';
 
 interface HeaderProps {
   onSectionChange: (section: string) => void;
+  showprojekt: boolean | null;
+  toggleProjects: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
-  const [menuOpen, setMenuOpen] = useState(false); // Initialwert auf false setzen
+const Header: React.FC<HeaderProps> = ({ onSectionChange, showprojekt, toggleProjects }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   const toggleMenu = () => {
@@ -35,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
         }}
       >
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', paddingX: 2 }}>
-          {/* Left side: Lebenslauf */}
+          {/* Linke Seite: Lebenslauf */}
           <Typography
             variant="h6"
             sx={{
@@ -49,26 +52,42 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
             Lebenslauf
           </Typography>
 
-          {/* Right side: Sidebar-Button */}
-          <IconButton
-            color="inherit"
-            aria-label="menu"
-            onClick={toggleMenu}
-            sx={{
-              fontSize: '30px',
-              color: '#fff',
-              backgroundColor: 'rgba(0, 0, 0, 0.4)',
-              borderRadius: '50%',
-              padding: '10px',
-              transition: 'transform 0.3s ease-in-out, background-color 0.3s ease',
-              '&:hover': {
-                backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                transform: 'scale(1.2)',
-              },
-            }}
-          >
-            {menuOpen ? <CloseIcon /> : <MenuIcon />}
-          </IconButton>
+          {/* Rechte Seite: Name und Sidebar-Button */}
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+            {/* Name "Khalil Ibesh" */}
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: 600,
+                color: '#fff',
+                fontSize: '1.2rem',
+                textShadow: '1px 1px 5px rgba(0, 0, 0, 0.5)',
+              }}
+            >
+              Khalil Ibesh
+            </Typography>
+
+            {/* Sidebar-Button */}
+            <IconButton
+              color="inherit"
+              aria-label="menu"
+              onClick={toggleMenu}
+              sx={{
+                fontSize: '30px',
+                color: '#fff',
+                backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                borderRadius: '50%',
+                padding: '10px',
+                transition: 'transform 0.3s ease-in-out, background-color 0.3s ease',
+                '&:hover': {
+                  backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                  transform: 'scale(1.2)',
+                },
+              }}
+            >
+              {menuOpen ? <CloseIcon /> : <MenuIcon />}
+            </IconButton>
+          </Box>
         </Toolbar>
 
         {/* Horizontale Menüzeile */}
@@ -89,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
             }}
           >
             {/* Navigationslinks */}
-            {['Über Mich', 'Skills', 'Bildungsweg', 'Berufserfahrungen', 'Kontakt'].map((text, index) => (
+            {['Über Mich', 'Skills', 'Bildungsweg', 'Berufserfahrungen', 'Kontakt','Projekte ansehen'].map((text, index) => (
               <Button
                 key={index}
                 sx={{
@@ -116,6 +135,7 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange }) => {
                 {text}
               </Button>
             ))}
+
           </Box>
         )}
       </AppBar>

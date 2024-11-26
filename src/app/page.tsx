@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Hero from '../components/Hero';
-import { CardContent, Container } from '@mui/material'; 
+import { Box } from '@mui/material'; 
 import Header from '@/components/Header';
 import Content from '@/components/Content';
 import MyInfo from '@/components/MyInfo';
@@ -28,27 +28,18 @@ const Home = () => {
   };
 
   return (
-    <CardContent
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-        background: 'black', // Hintergrund auf Schwarz setzen
-      }}
-    >
-      {/* Main Content Container */}
-      <Container maxWidth="lg" sx={{ paddingY: 4, flexGrow: 1 }}>
-        {/* Header (optional) */}
-        <Header onSectionChange={handleSectionClick} />
+    <Box sx={{ display: 'flex',backgroundColor:'black', flexDirection: 'column', minHeight: '100vh' }}>
+      {/* Main Content Page Layout */}
+      {/* Header (optional) */}
+      <Header onSectionChange={handleSectionClick} showprojekt={showProjects} toggleProjects={toggleProjects} />
 
-        {/* Übergabe des Zustands und der Funktion an die Hero-Komponente */}
-        <Hero showprojekt={showProjects} toggleProjects={toggleProjects} /> 
-        {activeSection && <MyInfo currentSection={activeSection} />}
 
-        {/* Zeige den Content nur, wenn showProjects true ist */}
-        {showProjects && <Content />}
-      </Container>
-    </CardContent>
+      {/* Zeige den Inhalt für den aktiven Abschnitt */}
+      {activeSection && <MyInfo currentSection={activeSection} />}
+
+      {/* Zeige den Content nur, wenn showProjects true ist */}
+      {showProjects && <Content />}
+    </Box>
   );
 };
 

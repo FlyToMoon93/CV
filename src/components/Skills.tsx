@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { Typography, Box, Chip, Tooltip } from '@mui/material';
-import { SiReact, SiNextdotjs, SiCypress, SiJira, SiAzuredevops, SiBitbucket, SiJson, SiDocker, SiKubernetes, SiJenkins, SiTrello, SiConfluence, SiSlack, SiUbuntu, SiGitlab } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiCypress, SiBitbucket, SiJson, SiConfluence, SiUbuntu, SiGitlab } from 'react-icons/si';
 import { DiScrum } from 'react-icons/di';
 import { MdWeb } from 'react-icons/md';
 import { SiKalilinux } from 'react-icons/si';
-import { FaNpm, FaBug, FaDocker, FaTerminal } from 'react-icons/fa'; 
+import { FaNpm, FaBug, FaDocker } from 'react-icons/fa'; 
 import { VscBeaker } from 'react-icons/vsc';
 
 const Skills = () => {
@@ -131,6 +131,10 @@ const Skills = () => {
             <Tooltip title="Version Control mit Git">
               <Chip label="Git" sx={chipStyle} />
             </Tooltip>
+            <Tooltip title="GitLab - Alternative Git-Plattform">
+              <Chip label="GitLab" icon={<SiGitlab />} sx={chipStyle} />
+            </Tooltip>
+          
             <Tooltip title="Bitbucket - Git Repository Management">
               <Chip label="Bitbucket" icon={<SiBitbucket />} sx={chipStyle} />
             </Tooltip>
@@ -162,9 +166,7 @@ const Skills = () => {
             <Tooltip title="Burp Suite - Sicherheits-Testing-Tool">
               <Chip label="Burp Suite" icon={<FaBug />} sx={chipStyle} />
             </Tooltip>
-            <Tooltip title="GitLab - Alternative Git-Plattform">
-              <Chip label="GitLab" icon={<SiGitlab />} sx={chipStyle} />
-            </Tooltip>
+           
            
           </Box>
         </div>
@@ -189,6 +191,8 @@ const headerStyle = {
   fontWeight: 'bold',
   color: '#333',
   marginBottom: '40px',
+  fontSize: '1.5rem', // Größere Schrift auf größeren Bildschirmen
+
   textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
 };
 
@@ -209,7 +213,18 @@ const categoryTitleStyle = {
   fontWeight: 'bold',
   color: '#1976d2',
   marginBottom: '15px',
+  fontSize: '1.0rem',
+
+  '@media (max-width: 768px)': {
+    fontSize: '1.0rem', // Kleinere Schriftgröße für Tablets
+  },
+
+  '@media (max-width: 480px)': {
+    fontSize: '1.0rem', // Noch kleinere Schriftgröße für Handys
+  },
 };
+
+
 
 const chipContainerStyle = {
   display: 'flex',

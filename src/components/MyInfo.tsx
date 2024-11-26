@@ -6,6 +6,7 @@ import Education from './Education'; // Import der Education-Komponente
 import WorkExperience from './WorkExperience'; // Import der WorkExperience-Komponente
 import Skills from './Skills';
 import Contact from './Contact';
+import Content from './Content';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -101,9 +102,9 @@ const MyInfo: React.FC<ContentProps> = ({ currentSection }) => {
   const classes = useStyles();
 
   return (
-    <div  className={classes.root}>
-      <Grid container  spacing={4} className={classes.gridContainer}>
-    { currentSection && <Box sx={{backgroundColor: '#f4f6f9', width: '100%', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+    <div >
+      <Grid >
+  
         {/* Dynamisches Rendern der Sektionen basierend auf currentSection */}
 
         {currentSection === 'über mich' && <AboutMe />}
@@ -111,7 +112,8 @@ const MyInfo: React.FC<ContentProps> = ({ currentSection }) => {
         {currentSection === 'bildungsweg' && <Education />}
         {currentSection === 'berufserfahrungen' && <WorkExperience />}
         {currentSection === 'kontakt' && <Contact/>}
-      </Box>}
+        {currentSection === 'projekte ansehen' && <Content/>}
+      
        
       </Grid>
     </div>
