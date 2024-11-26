@@ -28,11 +28,32 @@ const Home = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex',backgroundColor:'black', flexDirection: 'column', minHeight: '100vh' }}>
-      {/* Main Content Page Layout */}
-      {/* Header (optional) */}
-      <Header onSectionChange={handleSectionClick} showprojekt={showProjects} toggleProjects={toggleProjects} />
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative' }}>
+      {/* Hintergrundanimation mit Sternen */}
+      <Box sx={{
+        position: 'absolute', 
+        top: 0, 
+        left: 0, 
+        right: 0, 
+        bottom: 0, 
+        zIndex: -1, 
+        background: 'black', 
+        overflow: 'hidden', 
+        pointerEvents: 'none'
+      }}>
+        <Box sx={{
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          right: '0',
+          bottom: '0',
+          background: 'url("https://www.transparenttextures.com/patterns/stardust.png") repeat', 
+          animation: 'moveStars 20s linear infinite',
+        }} />
+      </Box>
 
+      {/* Main Content Page Layout */}
+      <Header onSectionChange={handleSectionClick} showprojekt={showProjects} toggleProjects={toggleProjects} />
 
       {/* Zeige den Inhalt für den aktiven Abschnitt */}
       {activeSection && <MyInfo currentSection={activeSection} />}
@@ -44,3 +65,4 @@ const Home = () => {
 };
 
 export default Home;
+
