@@ -60,9 +60,13 @@ const Home = () => {
 
       {/* Zeige den Content nur, wenn showProjects true ist */}
       {showProjects && <Content />}
+
+      {/* Hinzufügen des Rumi-Zitats */}
+      { !activeSection &&  <Box sx={{ padding: '20px', textAlign: 'center' }}>
+        <h2>Anything you lose comes round in new form. – Rumi</h2>
+      </Box> }
     </Box>
   );
 };
 
 export default Home;
-
