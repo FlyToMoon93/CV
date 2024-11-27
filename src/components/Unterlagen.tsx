@@ -4,7 +4,7 @@ import React from 'react';
 
 const Unterlagen = () => {
   // Pfad zur PDF-Datei
-  const pdfFile = '/docs/Khalil_Unterlagen.pdf';
+  const pdfFile = 'https://raw.githubusercontent.com/FlyToMoon93/CV/37607656361222599f86172ae25ba235cb94a42a/public/Khalil_Unterlagen.pdf';
 
   return (
     <div
