@@ -7,6 +7,7 @@ import WorkExperience from './WorkExperience'; // Import der WorkExperience-Komp
 import Skills from './Skills';
 import Contact from './Contact';
 import Content from './Content';
+import Unterlagen from './Unterlagen';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -94,12 +95,13 @@ const useStyles = makeStyles(() => ({
 }));
 
 
-interface ContentProps {
+export interface ContentProps {
   currentSection: string | null;
 }
 
 const MyInfo: React.FC<ContentProps> = ({ currentSection }) => {
   const classes = useStyles();
+  const correctPassword = 'IAmYourFutureBoss!'; // Definiere hier das richtige Passwort
 
   return (
     <div >
@@ -113,6 +115,8 @@ const MyInfo: React.FC<ContentProps> = ({ currentSection }) => {
         {currentSection === 'berufserfahrungen' && <WorkExperience />}
         {currentSection === 'kontakt' && <Contact/>}
         {currentSection === 'projekte ansehen' && <Content/>}
+        {currentSection === 'unterlagen' && <Unterlagen/>}
+
       
        
       </Grid>

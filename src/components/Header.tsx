@@ -108,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange, showprojekt, togglePro
             }}
           >
             {/* Navigationslinks */}
-            {['Über Mich', 'Skills', 'Bildungsweg', 'Berufserfahrungen', 'Kontakt','Projekte ansehen'].map((text, index) => (
+            {['Über Mich', 'Skills', 'Bildungsweg', 'Berufserfahrungen', 'Kontakt','Projekte ansehen','Unterlagen'].map((text, index) => (
               <Button
                 key={index}
                 sx={{

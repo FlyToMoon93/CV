@@ -1,5 +1,78 @@
 import React from 'react';
 import { Typography, Card, CardContent, Button } from '@mui/material';
+// Styles
+const sectionStyle = {
+  padding: '50px',
+  background: 'linear-gradient(135deg, #f4f7f6 0%, #e0e8f0 100%)',
+  '@media (max-width: 768px)': {
+    padding: '30px', // Weniger Padding für kleinere Bildschirme
+  },
+};
+
+const contentStyle = {
+  maxWidth: '1200px',
+  margin: '0 auto',
+  '@media (max-width: 768px)': {
+    maxWidth: '90%', // Auf kleineren Bildschirmen den Inhalt enger halten
+  },
+};
+
+const headerStyle = {
+  fontWeight: 'bold',
+  color: '#333',
+  marginBottom: '40px',
+  fontSize: '1.5rem', // Größere Schrift auf größeren Bildschirmen
+  '@media (max-width: 768px)': {
+    fontSize: '0.5rem', // Kleinere Schrift auf Tablets
+  },
+  '@media (max-width: 480px)': {
+    fontSize: '0.5rem', // Noch kleinere Schrift auf mobilen Geräten
+  },
+};
+
+const cardStyle = {
+  marginBottom: '30px',
+  borderRadius: '12px',
+  boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
+  backgroundColor: '#ffffff',
+  padding: '20px',
+  '@media (max-width: 768px)': {
+    padding: '15px', // Weniger Padding auf kleineren Geräten
+  },
+};
+
+const titleStyle = {
+  fontWeight: 'bold',
+  color: '#1976d2',
+  fontSize: '1.0rem', // Standardgröße für die Job-Titel
+  '@media (max-width: 768px)': {
+    fontSize: '1.15rem', // Kleinere Schrift für Tablets
+  },
+  '@media (max-width: 480px)': {
+    fontSize: '1rem', // Noch kleinere Schrift für Handys
+  },
+};
+
+const contentText = {
+  marginBottom: '20px',
+  fontSize: '16px',
+  color: '#555',
+  '@media (max-width: 768px)': {
+    fontSize: '14px', // Kleinere Schrift für Tablets
+  },
+  '@media (max-width: 480px)': {
+    fontSize: '12px', // Noch kleinere Schrift für Handys
+  },
+};
+
+const buttonStyle = {
+  marginTop: '15px',
+  backgroundColor: '#1976d2',
+  color: 'white',
+  '&:hover': {
+    backgroundColor: '#1565c0',
+  },
+};
 
 const WorkExperience = () => {
   return (
@@ -75,80 +148,6 @@ const WorkExperience = () => {
       </div>
     </section>
   );
-};
-
-// Styles
-const sectionStyle = {
-  padding: '50px',
-  background: 'linear-gradient(135deg, #f4f7f6 0%, #e0e8f0 100%)',
-  '@media (max-width: 768px)': {
-    padding: '30px', // Weniger Padding für kleinere Bildschirme
-  },
-};
-
-const contentStyle = {
-  maxWidth: '1200px',
-  margin: '0 auto',
-  '@media (max-width: 768px)': {
-    maxWidth: '90%', // Auf kleineren Bildschirmen den Inhalt enger halten
-  },
-};
-
-const headerStyle = {
-  fontWeight: 'bold',
-  color: '#333',
-  marginBottom: '40px',
-  fontSize: '1.5rem', // Größere Schrift auf größeren Bildschirmen
-  '@media (max-width: 768px)': {
-    fontSize: '0.5rem', // Kleinere Schrift auf Tablets
-  },
-  '@media (max-width: 480px)': {
-    fontSize: '0.5rem', // Noch kleinere Schrift auf mobilen Geräten
-  },
-};
-
-const cardStyle = {
-  marginBottom: '30px',
-  borderRadius: '12px',
-  boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
-  backgroundColor: '#ffffff',
-  padding: '20px',
-  '@media (max-width: 768px)': {
-    padding: '15px', // Weniger Padding auf kleineren Geräten
-  },
-};
-
-const titleStyle = {
-  fontWeight: 'bold',
-  color: '#1976d2',
-  fontSize: '1.0rem', // Standardgröße für die Job-Titel
-  '@media (max-width: 768px)': {
-    fontSize: '1.15rem', // Kleinere Schrift für Tablets
-  },
-  '@media (max-width: 480px)': {
-    fontSize: '1rem', // Noch kleinere Schrift für Handys
-  },
-};
-
-const contentText = {
-  marginBottom: '20px',
-  fontSize: '16px',
-  color: '#555',
-  '@media (max-width: 768px)': {
-    fontSize: '14px', // Kleinere Schrift für Tablets
-  },
-  '@media (max-width: 480px)': {
-    fontSize: '12px', // Noch kleinere Schrift für Handys
-  },
-};
-
-const buttonStyle = {
-  marginTop: '15px',
-  backgroundColor: '#1976d2',
-  color: 'white',
-  '&:hover': {
-    backgroundColor: '#1565c0',
-  },
 };
 
 export default WorkExperience;

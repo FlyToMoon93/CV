@@ -37,16 +37,16 @@ const Home = () => {
         right: 0, 
         bottom: 0, 
         zIndex: -1, 
-        background: 'black', 
+        backgroundColor: 'black', 
         overflow: 'hidden', 
         pointerEvents: 'none'
       }}>
         <Box sx={{
           position: 'absolute',
-          top: '0',
-          left: '0',
-          right: '0',
-          bottom: '0',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
           background: 'url("https://www.transparenttextures.com/patterns/stardust.png") repeat', 
           animation: 'moveStars 20s linear infinite',
         }} />
@@ -56,15 +56,17 @@ const Home = () => {
       <Header onSectionChange={handleSectionClick} showprojekt={showProjects} toggleProjects={toggleProjects} />
 
       {/* Zeige den Inhalt für den aktiven Abschnitt */}
-      {activeSection && <MyInfo currentSection={activeSection} />}
+      {activeSection && <MyInfo currentSection={activeSection}/>}
 
       {/* Zeige den Content nur, wenn showProjects true ist */}
       {showProjects && <Content />}
 
       {/* Hinzufügen des Rumi-Zitats */}
-      { !activeSection &&  <Box sx={{ padding: '20px', textAlign: 'center' }}>
-        <h2>Anything you lose comes round in new form. – Rumi</h2>
-      </Box> }
+      {!activeSection && (
+        <Box sx={{ padding: '20px', textAlign: 'center' }}>
+          <h2>Anything you lose comes round in new form. – Rumi</h2>
+        </Box>
+      )}
     </Box>
   );
 };

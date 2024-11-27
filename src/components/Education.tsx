@@ -1,5 +1,53 @@
 import React from 'react';
 import { Typography, Card, CardContent, Button } from '@mui/material';
+// Styles
+const sectionStyle = {
+  padding: '50px',
+  background: 'linear-gradient(135deg, #f4f7f6 0%, #e0e8f0 100%)',
+};
+
+const contentStyle = {
+  maxWidth: '1200px',
+  margin: '0 auto',
+};
+
+const headerStyle = {
+  fontWeight: 'bold',
+  color: '#333', // Dunklere Schriftfarbe für besseren Kontrast
+  marginBottom: '40px',
+  fontSize: '1.5rem', // Größere Schrift auf größeren Bildschirmen
+
+};
+
+const cardStyle = {
+  marginBottom: '30px',
+  borderRadius: '12px',
+  boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)', // Subtile Schatten für einen modernen Look
+  backgroundColor: '#ffffff', // Heller Hintergrund für die Karten
+  padding: '20px',
+};
+
+const titleStyle = {
+  fontWeight: 'bold',
+  fontSize: '1.0rem',
+
+  color: '#1976d2', // Klare, kräftige Farbe für die Titel
+};
+
+const contentText = {
+  marginBottom: '20px',
+  fontSize: '16px',
+  color: '#555', // Dunklere Schrift für bessere Lesbarkeit
+};
+
+const buttonStyle = {
+  marginTop: '15px',
+  backgroundColor: '#1976d2',
+  color: 'white',
+  '&:hover': {
+    backgroundColor: '#1565c0',
+  },
+};
 
 const Education = () => {
   return (
@@ -117,55 +165,6 @@ const Education = () => {
       </div>
     </section>
   );
-};
-
-// Styles
-const sectionStyle = {
-  padding: '50px',
-  background: 'linear-gradient(135deg, #f4f7f6 0%, #e0e8f0 100%)',
-};
-
-const contentStyle = {
-  maxWidth: '1200px',
-  margin: '0 auto',
-};
-
-const headerStyle = {
-  fontWeight: 'bold',
-  color: '#333', // Dunklere Schriftfarbe für besseren Kontrast
-  marginBottom: '40px',
-  fontSize: '1.5rem', // Größere Schrift auf größeren Bildschirmen
-
-};
-
-const cardStyle = {
-  marginBottom: '30px',
-  borderRadius: '12px',
-  boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)', // Subtile Schatten für einen modernen Look
-  backgroundColor: '#ffffff', // Heller Hintergrund für die Karten
-  padding: '20px',
-};
-
-const titleStyle = {
-  fontWeight: 'bold',
-  fontSize: '1.0rem',
-
-  color: '#1976d2', // Klare, kräftige Farbe für die Titel
-};
-
-const contentText = {
-  marginBottom: '20px',
-  fontSize: '16px',
-  color: '#555', // Dunklere Schrift für bessere Lesbarkeit
-};
-
-const buttonStyle = {
-  marginTop: '15px',
-  backgroundColor: '#1976d2',
-  color: 'white',
-  '&:hover': {
-    backgroundColor: '#1565c0',
-  },
 };
 
 export default Education;

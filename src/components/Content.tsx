@@ -6,19 +6,11 @@ import React from 'react';
 const useStyles = makeStyles(() => ({
   root: {
     background: 'linear-gradient(135deg, #f4f7f6 0%, #e0e8f0 100%)',
-    minHeight: '100vh',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     padding: '60px 20px',
     borderRadius: '12px',
     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
   },
-  container: {
-    width: '100%',
-    maxWidth: '1500px', // Optional: Erhöhen, um mehr Platz für große Bildschirme zu bieten
-    textAlign: 'center',
-  },
+
   headerStyle: {
     fontWeight: 'bold',
     color: '#333',
@@ -105,7 +97,7 @@ const Content = () => {
 
   return (
     <div className={classes.root} id="Projekte ansehen">
-      <div className={classes.container}>
+      <div>
         {/* Titel */}
         <Typography variant="h3" component="h2" align="center" className={classes.headerStyle}>
           Meine Projekte
