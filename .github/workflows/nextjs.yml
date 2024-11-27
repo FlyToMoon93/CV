@@ -33,18 +33,7 @@ jobs:
 
       # Debugging: List files to ensure the file exists
       - name: List files for debugging
-        run: ls -R
-
-      # Copy PDF from docs to public directory
-      - name: Copy PDF to public directory
-        run: |
-          if [ -f "./docs/Khalil_Unterlagen.pdf" ]; then
-            cp ./docs/Khalil_Unterlagen.pdf ./public/
-          else
-            echo "PDF file not found in docs/"
-            exit 1
-          fi
-
+        run: ls -R   
       # Detect package manager (npm/yarn)
       - name: Detect package manager
         id: detect-package-manager
