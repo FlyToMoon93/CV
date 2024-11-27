@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import Hero from '../components/Hero';
 import { Box } from '@mui/material'; 
 import Header from '@/components/Header';
 import Content from '@/components/Content';
 import MyInfo from '@/components/MyInfo';
+import AttentionGrabbing from '@/components/AttentionGrabbing';
 
 // Home-Komponente
 const Home = () => {
@@ -61,10 +61,10 @@ const Home = () => {
       {/* Zeige den Content nur, wenn showProjects true ist */}
       {showProjects && <Content />}
 
-      {/* Hinzufügen des Rumi-Zitats */}
+      {/* Hinzufügen des YouTube-Videos */}
       {!activeSection && (
         <Box sx={{ padding: '20px', textAlign: 'center' }}>
-          <h2>Anything you lose comes round in new form. – Rumi</h2>
+          <AttentionGrabbing/>
         </Box>
       )}
     </Box>
