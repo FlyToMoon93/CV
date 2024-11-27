@@ -16,7 +16,7 @@ const MillionaireGame = () => {
   const isGameFinished = currentQuestionIndex === questions.length - 1 && answered;
 
   useEffect(() => {
-    fetch('https://FlyToMoon93.github.io/CV/Khalil_Unterlagen.pdf/questions.json')
+    fetch('https://FlyToMoon93.github.io/CV/questions.json')
       .then(response => response.json())
       .then(data => {
         console.log("Geladene Fragen:", data);
