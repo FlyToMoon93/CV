@@ -3,7 +3,6 @@ import { Typography, Card, CardContent, Button } from '@mui/material';
 // Styles
 const sectionStyle = {
   padding: '50px',
-  background: 'linear-gradient(135deg, #f4f7f6 0%, #e0e8f0 100%)',
   '@media (max-width: 768px)': {
     padding: '30px', // Weniger Padding für kleinere Bildschirme
   },

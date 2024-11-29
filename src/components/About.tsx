@@ -110,19 +110,9 @@ const hoverTextStyle = {
 
 // Stil für die gesamte Section
 const sectionStyle = {
-  background: 'linear-gradient(135deg, #f4f7f6 0%, #e0e8f0 100%)',
   padding: '60px 20px',
-  borderRadius: '12px',
 };
-const footerStyle = {
-  marginTop: '40px',
-  padding: '20px',
-  textAlign: 'center',
-  backgroundColor: '#f7f9fc',
-  color: '#34495e',
-  borderRadius: '8px',
-  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-};
+
 const About = () => {
   return (
     <section id='about' style={sectionStyle}>
