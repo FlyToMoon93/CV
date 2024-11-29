@@ -37,7 +37,6 @@ const titleStyle = {
 };
 
 const contentText = {
-  marginBottom: '20px',
   fontSize: '16px',
   color: '#555', // Dunklere Schrift für bessere Lesbarkeit
 };
@@ -67,7 +66,7 @@ const Education = () => {
             <Typography variant="body1" style={contentText}>
               <strong>Studiengang:</strong> Masterstudium in Cloud Applications und Security Engineering
             </Typography>
-            <Typography variant="body1">
+            <Typography variant="body1" style={contentText}>
               <strong>Voraussichtlicher Abschluss:</strong> 15.08.2025
             </Typography>
             <Button variant="contained" color="primary" onClick={() => window.open('https://www.thi.de/informatik/studiengaenge/cloud-applications-und-security-engineering-msc/', '_blank')} style={buttonStyle}>
@@ -79,8 +78,20 @@ const Education = () => {
         {/* Bachelorstudium */}
         <Card style={cardStyle}>
           <CardContent>
-            <Typography variant="h5" style={titleStyle}>Bachelorstudium: Flug- und Fahrzeuginformatik</Typography>
-            <Typography variant="subtitle1" color="textSecondary">10/2019 - 03/2024</Typography>
+          <Typography variant="h5" style={titleStyle}>Technische Hochschule Ingolstadt</Typography>
+            {/* Zweiter Titel mit angepasstem Stil */}
+            <Typography 
+              variant="h6" 
+              style={{
+                fontSize: '1rem',         // Kleinere Schriftgröße für den zweiten Titel
+                fontFamily: '"Roboto", sans-serif',  // Andere Schriftart
+                fontWeight: 'normal',     // Weniger betont (normal) im Vergleich zum ersten Titel
+                color: '#555'             // Optional: Andere Farbe, um den Kontrast anzupassen
+              }}
+            >
+              Bachelorstudium: Flug- und Fahrzeuginformatik
+            </Typography>           
+             <Typography variant="subtitle1" color="textSecondary">10/2019 - 03/2024</Typography>
             <Typography variant="body1" style={contentText}>
               <strong>Bachelorarbeitsnote:</strong> 1,3
               <br />
