@@ -1,7 +1,8 @@
 'use client'; // <-- Diese Zeile bleibt oben im Dateikopf
 
 import React from 'react';
-import { Typography, Box, Chip, Tooltip } from '@mui/material';
+import { Typography, Box, Chip, Tooltip, Card, CardContent } from '@mui/material';
+import { GitHub } from '@mui/icons-material';
 
 // Styles
 const sectionStyle = {
@@ -60,11 +61,48 @@ const chipStyle = {
   color: '#fff',
   fontWeight: 'bold',
   transition: 'transform 0.2s ease-in-out',
+  display: 'flex',
+  alignItems: 'center',
+  padding: '8px 12px',
   '&:hover': {
-    transform: 'scale(1.1)',
+    transform: 'scale(1.06)',
     backgroundColor: '#1565c0',
   },
 };
+
+
+const cardStyle = {
+  marginBottom: '30px',
+  borderRadius: '12px',
+  boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
+  backgroundColor: '#ffffff',
+  padding: '20px',
+};
+
+const titleStyle = {
+  fontWeight: 'bold',
+  fontSize: '1.0rem',
+  color: '#1976d2',
+};
+
+const contentText = {
+  marginBottom: '20px',
+  fontSize: '16px',
+  color: '#555',
+};
+
+
+
+const chipLinkStyle = {
+  textDecoration: 'none',
+};
+
+const iconStyle = {
+  fontSize: '20px',
+  marginRight: '8px',
+  color: 'white', // Hier setzen wir die Farbe der Icons auf Weiß
+};
+
 
 const Skills = () => {
   return (
@@ -237,7 +275,26 @@ const Skills = () => {
             </Tooltip>
           </Box>
         </div>
-      </div>
+        
+         {/* GitHub Box */}
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>GitHub</Typography>
+            <Typography variant="body1" style={contentText}>
+              <strong>Profil:</strong>  GitHub-Projekt
+            </Typography>
+            <Tooltip title="GitHub Profil">
+              <a href="https://github.com/FlyToMoon93/Projects" target="_blank" rel="noopener noreferrer" style={chipLinkStyle}>
+                <Chip 
+                  label="GitHub-Projekt ansehen" 
+                  icon={<GitHub style={iconStyle} />} 
+                  sx={chipStyle} 
+                />
+              </a>
+            </Tooltip>
+          </CardContent>
+        </Card>
+        </div>
     </section>
   );
 };
