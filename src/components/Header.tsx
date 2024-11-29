@@ -110,7 +110,6 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange, showprojekt, togglePro
               backgroundColor: 'rgba(52, 152, 219, 0.8)',
               paddingY: 1,
               transition: 'all 0.3s ease',
-              borderRadius: '10px',
               animation: 'fadeIn 0.5s ease-out',
               '@media (min-width:600px)': {
                 flexDirection: 'row',
