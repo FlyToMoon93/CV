@@ -12,13 +12,11 @@ const headerStyle = {
 
 // Stil für den Einführungstext
 const introTextStyle = {
-  fontSize: '1.15rem',
-  lineHeight: '1.8',
-  color: '#34495E',
-  textAlign: 'justify',
-  marginBottom: '30px',
-  maxWidth: '900px',
-  margin: '0 auto',
+         marginBottom: '30px',
+          textAlign: 'center',
+          color: '#333',
+          fontSize: '1.2rem',
+          lineHeight: '1.5',
 };
 
 // Stil für das Zitat
@@ -124,10 +122,9 @@ const About = () => {
 
       {/* Einführungstext */}
       <Typography variant="body1" sx={introTextStyle}>
-        Als leidenschaftlicher Entwickler gehe ich über den reinen Code hinaus und schaffe digitale Erlebnisse,
-        die sowohl funktional als auch ästhetisch ansprechend sind. Mit einem klaren Fokus auf innovative Technologien
-        und einem Auge für Design verwandle ich Konzepte in interaktive, benutzerfreundliche Webanwendungen, die
-        sowohl die Anforderungen der Nutzer als auch die Vision der Kunden widerspiegeln.
+      Für mich stehen Funktionalität und Benutzerfreundlichkeit im Mittelpunkt jeder Lösung. 
+      Mein Ziel ist es, Software zu entwickeln, die nicht nur funktioniert, sondern auch begeistert. 
+      Dabei setze ich auf präzise Planung, kreative Problemlösung und ein hohes Maß an Detailgenauigkeit.
       </Typography>
 
       <Typography variant="h6" align="center" sx={quoteStyle}>

@@ -82,10 +82,10 @@ const Skills = () => {
           lineHeight: '1.5',
         }}>
           <Typography>
-            Hallo! Mein Name ist <b>Khalil Ibesh</b>, und ich bin ein leidenschaftlicher Softwareentwickler, der komplexe Herausforderungen in
-            elegante und effiziente Lösungen verwandelt. Mein Fokus liegt darauf, innovative digitale Konzepte zu entwickeln, die sowohl
-            technisch als auch funktional überzeugen. Mit einer Mischung aus Kreativität, Präzision und einem tiefen Verständnis für
-            moderne Softwarearchitekturen arbeite ich daran, Projekte auf das nächste Level zu heben und einen echten Mehrwert zu schaffen.
+          Ein leidenschaftlicher Softwareentwickler, der komplexe Herausforderungen in elegante und effiziente Lösungen verwandelt. 
+          Der Fokus liegt auf der Entwicklung innovativer digitaler Konzepte, die sowohl technisch als auch funktional überzeugen.
+           Mit einer Kombination aus Kreativität, Präzision und tiefem Verständnis für moderne Softwarearchitekturen werden Projekte 
+           auf das nächste Level gehoben und ein echter Mehrwert geschaffen.
           </Typography>
         </Box>
         {/* Programmiersprachen & Frameworks */}
