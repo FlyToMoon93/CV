@@ -47,8 +47,8 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange, showprojekt, togglePro
       <AppBar
         position="static"
         sx={{
-          backgroundColor: 'rgba(44, 62, 80, 0.8)',
-          backdropFilter: 'blur(10px)',
+          backgroundColor: 'rgba(35, 52, 70, 0.9)',
+          backdropFilter: 'blur(80px)',
           boxShadow: 'none',
         }}
       >
