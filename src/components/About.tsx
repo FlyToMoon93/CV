@@ -110,7 +110,7 @@ const hoverTextStyle = {
 
 // Stil für die gesamte Section
 const sectionStyle = {
-  padding: '60px 20px',
+  padding: '50px 3px',
 };
 
 const About = () => {
