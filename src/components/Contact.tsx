@@ -57,7 +57,7 @@ const chipStyle = {
   alignItems: 'center',
   padding: '8px 12px',
   '&:hover': {
-    transform: 'scale(1.1)',
+    transform: 'scale(1.06)',
     backgroundColor: '#1565c0',
   },
 };
