@@ -281,12 +281,12 @@ const Skills = () => {
           <CardContent>
             <Typography variant="h5" style={titleStyle}>GitHub</Typography>
             <Typography variant="body1" style={contentText}>
-              <strong>Profil:</strong>  GitHub-Projekt
+              <strong>Profil:</strong>  GitHub-Projekte
             </Typography>
             <Tooltip title="GitHub Profil">
               <a href="https://github.com/FlyToMoon93/Projects" target="_blank" rel="noopener noreferrer" style={chipLinkStyle}>
                 <Chip 
-                  label="GitHub-Projekt ansehen" 
+                  label="GitHub-Projekte ansehen" 
                   icon={<GitHub style={iconStyle} />} 
                   sx={chipStyle} 
                 />
