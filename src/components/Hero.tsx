@@ -9,7 +9,7 @@ const CircleImage = styled(Box)(({ theme }) => ({
   borderRadius: '50%',         // Macht das Bild rund
   backgroundSize: 'cover',     // Bild wird innerhalb des Kreises skaliert
   backgroundPosition: 'center', // Bild bleibt zentriert im Kreis
-  backgroundImage: 'url(https://raw.githubusercontent.com/FlyToMoon93/CV/7ed36b3c8c466695314c28319f80a772ccc07b26/public/khalil.jpg)', // Bildquelle
+  backgroundImage: 'url(https://raw.githubusercontent.com/FlyToMoon93/CV/8dbd0916a5df9e3275a924c4d0c5cfaf016358e7/public/khalilc.jpg)', // Bildquelle
   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)', // Schatten für das Bild
   position: 'absolute',
   top: '50%',                  // Vertikale Zentrierung der Seite
