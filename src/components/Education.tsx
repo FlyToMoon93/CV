@@ -93,8 +93,6 @@ const Education = () => {
              <Typography variant="subtitle1" color="textSecondary">10/2019 - 03/2024</Typography>
             <Typography variant="body1" style={contentText}>
               <strong>Bachelorarbeitsnote:</strong> 1,3
-              <br />
-              <strong>Prüfungsgesamtnote:</strong> 3,1
             </Typography>
             <Button variant="contained" color="primary" onClick={() => window.open('https://www.thi.de/informatik/studiengaenge/flug-und-fahrzeuginformatik-bsc/', '_blank')} style={buttonStyle}>
               Mehr zum Studiengang
