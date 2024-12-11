@@ -35,7 +35,6 @@ const gridStyle = {
 
 // Stil für den Bereich der persönlichen Informationen
 const infoSectionStyle = {
-  padding: '20px',
   borderRadius: '12px',
   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Sanfter Schatten
   color: '#34495E', // Dunkelgrauer Text
@@ -60,9 +59,9 @@ const infoTitleStyle = {
 // Stil für die Liste der persönlichen Informationen
 const infoListStyle = {
   listStyleType: 'none',
-  paddingLeft: '20px',
   fontSize: '1.1rem',
   marginBottom: '20px',
+  paddingLeft:'0px>'
 };
 
 // Stil für die Sprachbezeichnung
