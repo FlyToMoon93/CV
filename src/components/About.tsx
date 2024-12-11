@@ -61,7 +61,7 @@ const infoListStyle = {
   listStyleType: 'none',
   fontSize: '1.1rem',
   marginBottom: '20px',
-  paddingLeft:'-5px>'
+  paddingLeft:'0px'
 };
 
 // Stil für die Sprachbezeichnung
