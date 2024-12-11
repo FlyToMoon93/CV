@@ -60,7 +60,7 @@ const infoTitleStyle = {
 // Stil für die Liste der persönlichen Informationen
 const infoListStyle = {
   listStyleType: 'none',
-  paddingLeft: '0',
+  paddingLeft: '20px',
   fontSize: '1.1rem',
   marginBottom: '20px',
 };
@@ -131,135 +131,136 @@ const About = () => {
       “Kreativ im digitalen Bereich, proaktiv für optimale Kundenlösungen – das treibt mich an.”
        </Typography>
 
-      {/* Persönliche Informationen */}
-      <Grid container spacing={3} sx={gridStyle}>
-        <Grid item xs={12} sm={6} sx={infoSectionStyle}>
-          <Typography variant="h5" sx={infoTitleStyle}>Persönliche Informationen</Typography>
-          <ul style={infoListStyle}>
-            <br />
-            <li><strong>Geburtsdatum:</strong> 24.10.1993</li>
-            <br />
-            <li><strong>Geburtsort:</strong> Afrin, Syrien</li>
-            <br />
-            <li><strong>Familienstand:</strong> Ledig</li>
-            <br />
-          </ul>
-        </Grid>
+       <Grid container spacing={3} sx={{ ...gridStyle, justifyContent: 'center' }}>
+  {/* Persönliche Informationen */}
+  <Grid item xs={12} md={5} sx={infoSectionStyle}>
+    <Typography variant="h5" sx={infoTitleStyle}>Persönliche Informationen</Typography>
+    <ul style={infoListStyle}>
+      <br />
+      <li><strong>Geburtsdatum:</strong> 24.10.1993</li>
+      <br />
+      <li><strong>Geburtsort:</strong> Afrin, Syrien</li>
+      <br />
+      <li><strong>Familienstand:</strong> Ledig</li>
+      <br />
+    </ul>
+  </Grid>
 
-        {/* Sprachkenntnisse als horizontale Balken */}
-        <Grid item xs={12} sm={6} sx={languageSectionStyle}>
-          <Typography variant="h5" sx={infoTitleStyle}>Sprachkenntnisse</Typography>
-          <Grid container spacing={2}>
-            {/* Kurdisch */}
-            <Grid item xs={12}>
-              <Typography variant="body1" sx={languageTitleStyle}>Kurdisch</Typography>
-              <Box
-                sx={{
-                  ...progressBarContainerStyle,
-                  '&:hover .hover-text': {
-                    visibility: 'visible',
-                  },
-                }}
-                className="progress-bar"
-              >
-                <Box sx={{ ...progressBarStyle, width: '100%' }} />
-                <Typography
-                  variant="body2"
-                  className="hover-text"
-                  sx={{
-                    ...hoverTextStyle,
-                    position: 'absolute',
-                    visibility: 'hidden',
-                  }}
-                >
-                  Muttersprache
-                </Typography>
-              </Box>
-            </Grid>
-
-            {/* Arabisch */}
-            <Grid item xs={12}>
-              <Typography variant="body1" sx={languageTitleStyle}>Arabisch</Typography>
-              <Box
-                sx={{
-                  ...progressBarContainerStyle,
-                  '&:hover .hover-text': {
-                    visibility: 'visible',
-                  },
-                }}
-                className="progress-bar"
-              >
-                <Box sx={{ ...progressBarStyle, width: '100%' }} />
-                <Typography
-                  variant="body2"
-                  className="hover-text"
-                  sx={{
-                    ...hoverTextStyle,
-                    position: 'absolute',
-                    visibility: 'hidden',
-                  }}
-                >
-                  Muttersprache
-                </Typography>
-              </Box>
-            </Grid>
-
-            {/* Deutsch */}
-            <Grid item xs={12}>
-              <Typography variant="body1" sx={languageTitleStyle}>Deutsch</Typography>
-              <Box
-                sx={{
-                  ...progressBarContainerStyle,
-                  '&:hover .hover-text': {
-                    visibility: 'visible',
-                  },
-                }}
-                className="progress-bar"
-              >
-                <Box sx={{ ...progressBarStyle, width: '90%' }} />
-                <Typography
-                  variant="body2"
-                  className="hover-text"
-                  sx={{
-                    ...hoverTextStyle,
-                    position: 'absolute',
-                    visibility: 'hidden',
-                  }}
-                >
-                  Fließend
-                </Typography>
-              </Box>
-            </Grid>
-
-            {/* Englisch */}
-            <Grid item xs={12}>
-              <Typography variant="body1" sx={languageTitleStyle}>Englisch</Typography>
-              <Box
-                sx={{
-                  ...progressBarContainerStyle,
-                  '&:hover .hover-text': {
-                    visibility: 'visible',
-                  },
-                }}
-                className="progress-bar"
-              >
-                <Box sx={{ ...progressBarStyle, width: '85%' }} />
-                <Typography
-                  variant="body2"
-                  className="hover-text"
-                  sx={{
-                    ...hoverTextStyle,
-                    position: 'absolute',
-                    visibility: 'hidden',
-                  }}
-                >
-                  Fließend
-                </Typography>
-              </Box>
-            </Grid>
-          </Grid>
-        </Grid>
+  {/* Sprachkenntnisse */}
+  <Grid item xs={12} md={5} sx={languageSectionStyle}>
+    <Typography variant="h5" sx={infoTitleStyle}>Sprachkenntnisse</Typography>
+    <Grid container spacing={2}>
+      {/* Kurdisch */}
+      <Grid item xs={12}>
+        <Typography variant="body1" sx={languageTitleStyle}>Kurdisch</Typography>
+        <Box
+          sx={{
+            ...progressBarContainerStyle,
+            '&:hover .hover-text': {
+              visibility: 'visible',
+            },
+          }}
+          className="progress-bar"
+        >
+          <Box sx={{ ...progressBarStyle, width: '100%' }} />
+          <Typography
+            variant="body2"
+            className="hover-text"
+            sx={{
+              ...hoverTextStyle,
+              position: 'absolute',
+              visibility: 'hidden',
+            }}
+          >
+            Muttersprache
+          </Typography>
+        </Box>
       </Grid>
+
+      {/* Arabisch */}
+      <Grid item xs={12}>
+        <Typography variant="body1" sx={languageTitleStyle}>Arabisch</Typography>
+        <Box
+          sx={{
+            ...progressBarContainerStyle,
+            '&:hover .hover-text': {
+              visibility: 'visible',
+            },
+          }}
+          className="progress-bar"
+        >
+          <Box sx={{ ...progressBarStyle, width: '100%' }} />
+          <Typography
+            variant="body2"
+            className="hover-text"
+            sx={{
+              ...hoverTextStyle,
+              position: 'absolute',
+              visibility: 'hidden',
+            }}
+          >
+            Muttersprache
+          </Typography>
+        </Box>
+      </Grid>
+
+      {/* Deutsch */}
+      <Grid item xs={12}>
+        <Typography variant="body1" sx={languageTitleStyle}>Deutsch</Typography>
+        <Box
+          sx={{
+            ...progressBarContainerStyle,
+            '&:hover .hover-text': {
+              visibility: 'visible',
+            },
+          }}
+          className="progress-bar"
+        >
+          <Box sx={{ ...progressBarStyle, width: '90%' }} />
+          <Typography
+            variant="body2"
+            className="hover-text"
+            sx={{
+              ...hoverTextStyle,
+              position: 'absolute',
+              visibility: 'hidden',
+            }}
+          >
+            Fließend
+          </Typography>
+        </Box>
+      </Grid>
+
+      {/* Englisch */}
+      <Grid item xs={12}>
+        <Typography variant="body1" sx={languageTitleStyle}>Englisch</Typography>
+        <Box
+          sx={{
+            ...progressBarContainerStyle,
+            '&:hover .hover-text': {
+              visibility: 'visible',
+            },
+          }}
+          className="progress-bar"
+        >
+          <Box sx={{ ...progressBarStyle, width: '85%' }} />
+          <Typography
+            variant="body2"
+            className="hover-text"
+            sx={{
+              ...hoverTextStyle,
+              position: 'absolute',
+              visibility: 'hidden',
+            }}
+          >
+            Fließend
+          </Typography>
+        </Box>
+      </Grid>
+    </Grid>
+  </Grid>
+</Grid>
+
     </section>
   );
 };

@@ -111,13 +111,20 @@ const WorkExperience = () => {
             <Typography variant="body1" style={contentText}>
               <strong>Werkstudent, Praktikant, Frontend Entwickler</strong>
               <ul>
-                <li>HTML: Strukturierung</li>
-                <li>CSS: Styling</li>
-                <li>JavaScript: Interaktion</li>
-                <li>TypeScript: Typsicherheit</li>
-                <li>React.js: Komponenten</li>
-                <li>Next.js: Routing</li>
-                <li>React UI: Benutzeroberfläche</li>
+                <li><strong>HTML:</strong> Erstellung strukturierter und semantischer Webseiten für bessere Lesbarkeit und SEO-Optimierung.
+                </li>
+                <li><strong>CSS:</strong> Gestaltung responsiver Layouts mit modernen Techniken wie Flexbox und Grid für eine optimale Benutzererfahrung.
+                </li>
+                <li><strong>JavaScript:</strong> Implementierung interaktiver Elemente und dynamischer Funktionen zur Verbesserung der Benutzerinteraktion.
+                </li>
+                <li><strong>TypeScript:</strong> Einsatz von Typensicherheit zur Fehlervermeidung und Verbesserung der Code-Qualität.
+                </li>
+                <li><strong>React.js:</strong> Entwicklung modularer, wiederverwendbarer Komponenten für effiziente und skalierbare Benutzeroberflächen.
+                </li>
+                <li><strong>Next.js:</strong> Implementierung serverseitigen Routings und statischer Seitengenerierung für optimale Performance.
+                </li>
+                <li><strong>React UI:</strong> Gestaltung ansprechender Benutzeroberflächen mit Bibliotheken wie Material-UI für ein modernes Design.
+                </li>
               </ul>
             </Typography>
             <Button variant="contained" color="primary" onClick={() => window.open('https://www.techmatrix.de/', '_blank')} style={buttonStyle}>
