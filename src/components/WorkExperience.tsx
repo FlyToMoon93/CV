@@ -89,12 +89,18 @@ const WorkExperience = () => {
             <Typography variant="body1" style={contentText}>
               <strong>Werkstudent</strong>
               <ul>
-                <li>Erstellung von Testfällen auf Basis von User Stories für TÜV SÜD Online-Shops in Azure DevOps Test Plans.</li>
-                <li>Manuelle Durchführung von User Acceptance Tests unterschiedlicher TÜV SÜD Online-Shops.</li>
-                <li>Testautomatisierung und Skriptentwicklung mittels Cypress in JavaScript.</li>
-                <li>Erstellung von KPI-Dashboards für alle TÜV SÜD Online-Shops in Microsoft Excel mit Hilfe von Power Pivot, Power Query und Visual Basic.</li>
-                <li>Setup und Anpassung von komplexen Online-Formularen in 123Formbuilder mit Hilfe von HTML und CSS sowie Einrichtung von Business-Workflows.</li>
-                <li>Page-Setup und Content-Pflege für verschiedene TÜV SÜD Online-Shops mit Hilfe des Online-Shop Backoffices sowie Anpassung des Designs durch HTML und CSS.</li>
+                <li><strong>Testfall-Erstellung:</strong> Entwicklung von Testfällen basierend auf User Stories für die TÜV SÜD Online-Shops innerhalb von Azure DevOps Test Plans.
+                </li>
+                <li><strong>Manuelle User Acceptance Tests (UAT):</strong> Durchführung und Dokumentation von UATs für verschiedene TÜV SÜD Online-Shops zur Sicherstellung der Funktionalität und Benutzerfreundlichkeit.
+                </li>
+                <li><strong>Testautomatisierung mit Cypress:</strong> Automatisierung von Testabläufen und Erstellung von Skripten in JavaScript zur Effizienzsteigerung des Testprozesses.
+                </li>
+                <li><strong>KPI-Dashboards in Excel:</strong> Erstellung und Pflege von KPI-Dashboards für TÜV SÜD Online-Shops unter Verwendung von Power Pivot, Power Query und Visual Basic.
+                </li>
+                <li><strong>Formular-Setup mit 123FormBuilder:</strong> Konfiguration und Anpassung komplexer Online-Formulare mit HTML und CSS sowie Einrichtung von automatisierten Business-Workflows.
+                </li>
+                <li><strong>Content-Management und Design-Anpassungen:</strong> Pflege von Seiteninhalten und Anpassung von Designs im Online-Shop-Backoffice mit HTML und CSS.
+                </li>
               </ul>
             </Typography>
             <Button variant="contained" color="primary" onClick={() => window.open('https://www.tuvsud.com/de-de/ueber-uns/unsere-gesellschaften/digital-service', '_blank')} style={buttonStyle}>
@@ -141,8 +147,10 @@ const WorkExperience = () => {
             <Typography variant="body1" style={contentText}>
               <strong>Praktikant</strong>
               <ul>
-                <li>Wettbewerbs-Preisrecherche (Online)</li>
-                <li>Übertragung des Wettbewerbs in Excel-Dateien</li>
+                <li><strong>Wettbewerbs-Preisrecherche:</strong> Durchführung von Online-Preisanalysen, um aktuelle Markttrends und Preisstrategien der Konkurrenz zu identifizieren.
+                </li>
+                <li><strong>Datenaufbereitung in Excel:</strong> Übertragung und systematische Erfassung der recherchierten Preisinformationen in Excel-Tabellen für eine übersichtliche Darstellung und Auswertung.
+                </li>
               </ul>
             </Typography>
             <Button variant="contained" color="primary" onClick={() => window.open('https://www.mediamarktsaturn.com/', '_blank')} style={buttonStyle}>
