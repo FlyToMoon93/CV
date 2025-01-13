@@ -57,7 +57,7 @@ const Education = () => {
           Bildungsweg
         </Typography>
 
-        {/* <Card style={cardStyle}>
+        <Card style={cardStyle}>
           <CardContent>
             <Typography variant="h5" style={titleStyle}>Technische Hochschule Ingolstadt</Typography>
             <Typography variant="subtitle1" color="textSecondary">03/2024 - aktuell</Typography>
@@ -71,7 +71,7 @@ const Education = () => {
               Mehr zum Studiengang
             </Button>
           </CardContent>
-        </Card>*/}
+        </Card>
 
         {/* Bachelorstudium */}
         <Card style={cardStyle}>
