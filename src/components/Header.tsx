@@ -14,13 +14,13 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onSectionChange, showprojekt, toggleProjects }) => {
   const [menuOpen, setMenuOpen] = useState(true);
-  const [activeSection, setActiveSection] = useState<string>('über mich');  // Standard auf 'über mich'
+  const [activeSection, setActiveSection] = useState<string>('skills');  // Standard auf 'über mich'
   const [selectedGame, setSelectedGame] = useState<string | null>(null);
 
   // Effect, um sicherzustellen, dass beim Laden der Seite "Über mich" standardmäßig geöffnet ist
   useEffect(() => {
-    setActiveSection('über mich');
-    onSectionChange('über mich');  // Callback wird aufgerufen, um die "Über Mich"-Sektion zu laden
+    setActiveSection('skills');
+    onSectionChange('skills');  // Callback wird aufgerufen, um die "Über Mich"-Sektion zu laden
   }, []);
 
   const toggleMenu = () => {
@@ -116,7 +116,7 @@ const Header: React.FC<HeaderProps> = ({ onSectionChange, showprojekt, togglePro
               },
             }}
           >
-            {['Über mich', 'Skills', 'Bildungsweg', 'Berufserfahrung', 'Kontakt'].map((text, index) => (
+            {['Skills', 'Bildungsweg', 'Berufserfahrung', 'Kontakt'].map((text, index) => (
               <Button
                 key={index}
                 sx={{
