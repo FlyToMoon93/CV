@@ -14,7 +14,6 @@ const MyInfo: React.FC<ContentProps> = ({ currentSection }) => {
   return (
     <div>
       <Grid>
-        {currentSection === 'über mich' && <AboutMe />}
         {currentSection === 'skills' && <Skills />}
         {currentSection === 'bildungsweg' && <Education />}
         {currentSection === 'berufserfahrung' && <WorkExperience />}
