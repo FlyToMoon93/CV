@@ -120,10 +120,10 @@ const Skills = () => {
           lineHeight: '1.5',
         }}>
           <Typography>
-          Ein leidenschaftlicher Softwareentwickler, der komplexe Herausforderungen in elegante und effiziente Lösungen verwandelt. 
-          Der Fokus liegt auf der Entwicklung innovativer digitaler Konzepte, die sowohl technisch als auch funktional überzeugen.
-           Mit einer Kombination aus Kreativität, Präzision und tiefem Verständnis für moderne Softwarearchitekturen werden Projekte 
-           auf das nächste Level gehoben und ein echter Mehrwert geschaffen.
+            Ein leidenschaftlicher Softwareentwickler, der komplexe Herausforderungen in elegante und effiziente Lösungen verwandelt.
+            Der Fokus liegt auf der Entwicklung innovativer digitaler Konzepte, die sowohl technisch als auch funktional überzeugen.
+            Mit einer Kombination aus Kreativität, Präzision und tiefem Verständnis für moderne Softwarearchitekturen werden Projekte
+            auf das nächste Level gehoben und ein echter Mehrwert geschaffen.
           </Typography>
         </Box>
         {/* Programmiersprachen & Frameworks */}
@@ -140,6 +140,9 @@ const Skills = () => {
             </Tooltip>
             <Tooltip title="JavaScript Programming Language">
               <Chip label="JavaScript" sx={chipStyle} />
+            </Tooltip>
+            <Tooltip title="Python">
+              <Chip label="python" sx={chipStyle} />
             </Tooltip>
             <Tooltip title="ReactJS Framework">
               <Chip label="ReactJS" sx={chipStyle} />
@@ -275,8 +278,8 @@ const Skills = () => {
             </Tooltip>
           </Box>
         </div>
-        
-         {/* GitHub Box */}
+
+        {/* GitHub Box */}
         <Card style={cardStyle}>
           <CardContent>
             <Typography variant="h5" style={titleStyle}>GitHub</Typography>
@@ -285,16 +288,16 @@ const Skills = () => {
             </Typography>
             <Tooltip title="GitHub Profil">
               <a href="https://github.com/FlyToMoon93/Projects" target="_blank" rel="noopener noreferrer" style={chipLinkStyle}>
-                <Chip 
-                  label="GitHub-Projekte ansehen" 
-                  icon={<GitHub style={iconStyle} />} 
-                  sx={chipStyle} 
+                <Chip
+                  label="GitHub-Projekte ansehen"
+                  icon={<GitHub style={iconStyle} />}
+                  sx={chipStyle}
                 />
               </a>
             </Tooltip>
           </CardContent>
         </Card>
-        </div>
+      </div>
     </section>
   );
 };
