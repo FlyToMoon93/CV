@@ -78,29 +78,43 @@ const WorkExperience = () => {
     <section id="work-experience" style={sectionStyle}>
       <div style={contentStyle}>
         <Typography variant="h3" component="h2" align="center" style={headerStyle}>
-        Berufserfahrung
+          Berufserfahrung
         </Typography>
 
+        {/* Audi AG*/}
+        <Card style={cardStyle}>
+          <CardContent>
+            <Typography variant="h5" style={titleStyle}>Audi AG, Ingolstadt</Typography>
+            <Typography variant="subtitle1" color="textSecondary">03/2025 - 8/2025</Typography>
+            <Typography variant="body1" style={contentText}>
+              <strong>AUDI AG, freiwilliges Praktikum, Programmierung von Workflows und Verknüpfung von Datenbanken</strong>
+              <ul>
+                <li>Optimierung des Workflow-Prozesses in der Entwicklungsphase Programmierung in Visual Basic in Verbindung mit Excel.</li>
+                <li>Zusammenführung von Informationen aus verschiedenen Datenbanksystemen.</li>
+                <li>Testautomatisierung und Skriptentwicklung mittels Cypress in JavaScript.</li>
+                <li>Programmierung / Optimierung von Workflows.</li>
+                <li>VBA + Excel.</li>
+              </ul>
+            </Typography>
+            <Button variant="contained" color="primary" onClick={() => window.open('https://www.tuvsud.com/de-de/ueber-uns/unsere-gesellschaften/digital-service', '_blank')} style={buttonStyle}>
+              Mehr zum Unternehmen
+            </Button>
+          </CardContent>
+        </Card>
         {/* TÜV SÜD Digital Service GmbH */}
         <Card style={cardStyle}>
           <CardContent>
             <Typography variant="h5" style={titleStyle}>TÜV SÜD Digital Service GmbH, München</Typography>
-            <Typography variant="subtitle1" color="textSecondary">04/2023 - aktuell</Typography>
+            <Typography variant="subtitle1" color="textSecondary">04/2023 - 02/2025</Typography>
             <Typography variant="body1" style={contentText}>
               <strong>Werkstudent</strong>
               <ul>
-                <li><strong>Testfall-Erstellung:</strong> Entwicklung von Testfällen basierend auf User Stories für die TÜV SÜD Online-Shops innerhalb von Azure DevOps Test Plans.
-                </li>
-                <li><strong>Manuelle User Acceptance Tests (UAT):</strong> Durchführung und Dokumentation von UATs für verschiedene TÜV SÜD Online-Shops zur Sicherstellung der Funktionalität und Benutzerfreundlichkeit.
-                </li>
-                <li><strong>Testautomatisierung mit Cypress:</strong> Automatisierung von Testabläufen und Erstellung von Skripten in JavaScript zur Effizienzsteigerung des Testprozesses.
-                </li>
-                <li><strong>KPI-Dashboards in Excel:</strong> Erstellung und Pflege von KPI-Dashboards für TÜV SÜD Online-Shops unter Verwendung von Power Pivot, Power Query und Visual Basic.
-                </li>
-                <li><strong>Formular-Setup mit 123FormBuilder:</strong> Konfiguration und Anpassung komplexer Online-Formulare mit HTML und CSS sowie Einrichtung von automatisierten Business-Workflows.
-                </li>
-                <li><strong>Content-Management und Design-Anpassungen:</strong> Pflege von Seiteninhalten und Anpassung von Designs im Online-Shop-Backoffice mit HTML und CSS.
-                </li>
+                <li>Erstellung von Testfällen auf Basis von User Stories für TÜV SÜD Online-Shops in Azure DevOps Test Plans.</li>
+                <li>Manuelle Durchführung von User Acceptance Tests unterschiedlicher TÜV SÜD Online-Shops.</li>
+                <li>Testautomatisierung und Skriptentwicklung mittels Cypress in JavaScript.</li>
+                <li>Erstellung von KPI-Dashboards für alle TÜV SÜD Online-Shops in Microsoft Excel mit Hilfe von Power Pivot, Power Query und Visual Basic.</li>
+                <li>Setup und Anpassung von komplexen Online-Formularen in 123Formbuilder mit Hilfe von HTML und CSS sowie Einrichtung von Business-Workflows.</li>
+                <li>Page-Setup und Content-Pflege für verschiedene TÜV SÜD Online-Shops mit Hilfe des Online-Shop Backoffices sowie Anpassung des Designs durch HTML und CSS.</li>
               </ul>
             </Typography>
             <Button variant="contained" color="primary" onClick={() => window.open('https://www.tuvsud.com/de-de/ueber-uns/unsere-gesellschaften/digital-service', '_blank')} style={buttonStyle}>
@@ -117,20 +131,13 @@ const WorkExperience = () => {
             <Typography variant="body1" style={contentText}>
               <strong>Werkstudent, Praktikant, Frontend Entwickler</strong>
               <ul>
-                <li><strong>HTML:</strong> Erstellung strukturierter und semantischer Webseiten für bessere Lesbarkeit und SEO-Optimierung.
-                </li>
-                <li><strong>CSS:</strong> Gestaltung responsiver Layouts mit modernen Techniken wie Flexbox und Grid für eine optimale Benutzererfahrung.
-                </li>
-                <li><strong>JavaScript:</strong> Implementierung interaktiver Elemente und dynamischer Funktionen zur Verbesserung der Benutzerinteraktion.
-                </li>
-                <li><strong>TypeScript:</strong> Einsatz von Typensicherheit zur Fehlervermeidung und Verbesserung der Code-Qualität.
-                </li>
-                <li><strong>React.js:</strong> Entwicklung modularer, wiederverwendbarer Komponenten für effiziente und skalierbare Benutzeroberflächen.
-                </li>
-                <li><strong>Next.js:</strong> Implementierung serverseitigen Routings und statischer Seitengenerierung für optimale Performance.
-                </li>
-                <li><strong>React UI:</strong> Gestaltung ansprechender Benutzeroberflächen mit Bibliotheken wie Material-UI für ein modernes Design.
-                </li>
+                <li>HTML: Strukturierung</li>
+                <li>CSS: Styling</li>
+                <li>JavaScript: Interaktion</li>
+                <li>TypeScript: Typsicherheit</li>
+                <li>React.js: Komponenten</li>
+                <li>Next.js: Routing</li>
+                <li>React UI: Benutzeroberfläche</li>
               </ul>
             </Typography>
             <Button variant="contained" color="primary" onClick={() => window.open('https://www.techmatrix.de/', '_blank')} style={buttonStyle}>
@@ -147,10 +154,8 @@ const WorkExperience = () => {
             <Typography variant="body1" style={contentText}>
               <strong>Praktikant</strong>
               <ul>
-                <li><strong>Wettbewerbs-Preisrecherche:</strong> Durchführung von Online-Preisanalysen, um aktuelle Markttrends und Preisstrategien der Konkurrenz zu identifizieren.
-                </li>
-                <li><strong>Datenaufbereitung in Excel:</strong> Übertragung und systematische Erfassung der recherchierten Preisinformationen in Excel-Tabellen für eine übersichtliche Darstellung und Auswertung.
-                </li>
+                <li>Wettbewerbs-Preisrecherche (Online)</li>
+                <li>Übertragung des Wettbewerbs in Excel-Dateien</li>
               </ul>
             </Typography>
             <Button variant="contained" color="primary" onClick={() => window.open('https://www.mediamarktsaturn.com/', '_blank')} style={buttonStyle}>
