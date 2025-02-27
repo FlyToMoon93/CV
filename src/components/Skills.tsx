@@ -231,6 +231,30 @@ const Skills = () => {
           </Box>
         </div>
 
+        {/* Datenanalyse & BI: Excel, Power Query,Power Pivot, Power BI,Visual Basic (VBA) */}
+        <div style={skillBoxStyle}>
+          <Typography variant="h5" component="h3" style={categoryTitleStyle}>
+            Datenanalyse & BI
+          </Typography>
+          <Box sx={chipContainerStyle}>
+            <Tooltip title="Excel">
+              <Chip label="Excel-KPI-Dashboards" sx={chipStyle} />
+            </Tooltip>
+            <Tooltip title="Power Query">
+              <Chip label="Power Query" sx={chipStyle} />
+            </Tooltip>
+            <Tooltip title="Power Pivot">
+              <Chip label="Power Pivot" sx={chipStyle} />
+            </Tooltip>
+            <Tooltip title="Visual Basic (VBA)">
+              <Chip label="Visual Basic (VBA)" sx={chipStyle} />
+            </Tooltip>
+            <Tooltip title="Power BI">
+              <Chip label="Power BI" sx={chipStyle} />
+            </Tooltip>
+          </Box>
+        </div>
+
         {/* Weitere Tools & Technologien */}
         <div style={skillBoxStyle}>
           <Typography variant="h5" component="h3" style={categoryTitleStyle}>
