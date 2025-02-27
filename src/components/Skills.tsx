@@ -219,7 +219,7 @@ const Skills = () => {
             <Tooltip title="Manual Testing - Manuelle Tests">
               <Chip label="Manual Testing" sx={chipStyle} />
             </Tooltip>
-            <Tooltip title="Automated Testing - Automatisierte Tests">
+            <Tooltip title="Cypress,Playwright, selenium">
               <Chip label="Automated Testing" sx={chipStyle} />
             </Tooltip>
             <Tooltip title="Functional Testing - Funktionale Tests">
