@@ -96,7 +96,7 @@ const WorkExperience = () => {
                 <li>VBA + Excel.</li>
               </ul>
             </Typography>
-            <Button variant="contained" color="primary" onClick={() => window.open('https://www.tuvsud.com/de-de/ueber-uns/unsere-gesellschaften/digital-service', '_blank')} style={buttonStyle}>
+            <Button variant="contained" color="primary" onClick={() => window.open('https://www.audi.com/de/company/', '_blank')} style={buttonStyle}>
               Mehr zum Unternehmen
             </Button>
           </CardContent>
